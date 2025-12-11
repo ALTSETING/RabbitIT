@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rabbit IT — школа програмування</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rabbit IT — сучасна школа програмування для дітей, підлітків і дорослих. Онлайн та офлайн навчання." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Прелоадер -->
+  <div id="preloader">
+    <div class="preloader-logo">
+      <span class="ear ear-left"></span>
+      <span class="ear ear-right"></span>
+      <span class="face"></span>
+    </div>
+    <p class="preloader-text">Запускаємо Rabbit IT...</p>
+    <div class="preloader-bar">
+      <div class="preloader-bar-fill"></div>
+    </div>
+  </div>
+
+  <!-- Фонові декорації -->
+  <div class="floating-shapes">
+    <span class="shape shape-1"></span>
+    <span class="shape shape-2"></span>
+    <span class="shape shape-3"></span>
+    <span class="shape shape-4"></span>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo">
+        <div class="logo-icon">🐇</div>
+        <div class="logo-text">
+          <span class="logo-title">Rabbit IT</span>
+          <span class="logo-subtitle">школа програмування</span>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="#hero">Головна</a>
+        <a href="#about">Про школу</a>
+        <a href="#courses">Курси</a>
+        <a href="#formats">Формати</a>
+        <a href="#mentors">Ментори</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contacts">Контакти</a>
+      </nav>
+
+      <button class="btn btn-outline nav-cta" data-scrollTo="#signup">
+        Записатись
+      </button>
+
+      <button class="burger" id="burger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE NAV -->
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="#hero">Головна</a>
+    <a href="#about">Про школу</a>
+    <a href="#courses">Курси</a>
+    <a href="#formats">Формати</a>
+    <a href="#mentors">Ментори</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contacts">Контакти</a>
+    <button class="btn btn-primary" data-scrollTo="#signup">Записатись</button>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <div class="container hero-inner">
+      <div class="hero-content reveal">
+        <div class="hero-label">Нова школа • Rabbit IT</div>
+        <h1>
+          Вчися кодити<br />
+          <span class="gradient-text">швидше за кролика</span>
+        </h1>
+        <p class="hero-subtitle">
+          Онлайн та офлайн курси програмування для дітей, підлітків і дорослих.
+          Без нудних лекцій — тільки практика, проєкти й підтримка менторів.
+        </p>
+        <div class="hero-buttons">
+          <button class="btn btn-primary" data-scrollTo="#online-form">
+            Записатись на онлайн
+          </button>
+          <button class="btn btn-secondary" data-scrollTo="#offline-form">
+            Записатись офлайн у місті
+          </button>
+        </div>
+        <div class="hero-badges">
+          <div class="badge-card">
+            <span class="badge-title">9–17 років +18</span>
+            <span class="badge-text">Групи за рівнем та віком</span>
+          </div>
+          <div class="badge-card">
+            <span class="badge-title">Проєкти в портфоліо</span>
+            <span class="badge-text">Лендінги, боти, ігри</span>
+          </div>
+          <div class="badge-card">
+            <span class="badge-title">Cashback в ALTST</span>
+            <span class="badge-text">Екоcистема ALTSETING</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="hero-card">
+          <div class="hero-rabbit-orbit">
+            <div class="rabbit-core">
+              <span class="rabbit-face"></span>
+              <span class="rabbit-ear ear-left"></span>
+              <span class="rabbit-ear ear-right"></span>
+            </div>
+            <div class="orbit orbit-1"></div>
+            <div class="orbit orbit-2"></div>
+            <div class="orbit orbit-3"></div>
+          </div>
+          <div class="hero-tag hero-tag-top">
+            <span>first lesson</span>
+            <strong>FREE</strong>
+          </div>
+          <div class="hero-tag hero-tag-bottom">
+            <span>Rabbit IT</span>
+            <strong>Запис за 1 хвилину</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section about">
+    <div class="container section-inner">
+      <div class="section-header reveal">
+        <span class="section-label">Про Rabbit IT</span>
+        <h2>Школа, де код — це гра, а не каторга</h2>
+        <p>
+          Ми будуємо майбутнє разом з ALTSETING екосистемою: учні вчаться
+          створювати реальні продукти — сайти, боти, міні-ігри, NFT-проєкти,
+          DeFi-інструменти.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <ul class="about-list">
+            <li>Навчання з нуля — без досвіду програмування</li>
+            <li>Малі групи: максимум 8 учнів на ментора</li>
+            <li>Онлайн-уроки з записами, щоб можна було переглянути</li>
+            <li>Офлайн простір з технікою та міні-коворкінгом</li>
+            <li>Домашні проєкти, а не просто «зроби вправу 5.2»</li>
+            <li>Партнерство з ALTSETING — кешбек в ALTST за навчання</li>
+          </ul>
+        </div>
+        <div class="about-cards reveal">
+          <div class="stat-card">
+            <span class="stat-number">4</span>
+            <span class="stat-label">засновники в команді</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">2025</span>
+            <span class="stat-label">старт Rabbit IT</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">∞</span>
+            <span class="stat-label">можливостей у IT</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COURSES -->
+  <section id="courses" class="section courses">
+    <div class="container section-inner">
+      <div class="section-header center reveal">
+        <span class="section-label">Наші курси</span>
+        <h2>Вибери напрям, який качне тебе в IT</h2>
+      </div>
+
+      <div class="courses-grid">
+        <article class="course-card reveal">
+          <h3>Junior Coding (9–13)</h3>
+          <p>
+            Візуальне програмування, основи логіки, перші ігри та анімації.
+            Ідеально, щоб дитина полюбила код, а не зненавиділа його.
+          </p>
+          <ul>
+            <li>2 заняття на тиждень по 60 хв</li>
+            <li>Міні-проєкти щомісяця</li>
+            <li>Доступ до матеріалів 24/7</li>
+          </ul>
+          <button class="btn btn-ghost" data-scrollTo="#signup">
+            Записати дитину
+          </button>
+        </article>
+
+        <article class="course-card reveal">
+          <h3>Web Development (14+)</h3>
+          <p>
+            HTML, CSS, JavaScript. Лендінги, анімації, адаптив, підключення
+            оплат, інтеграції з ALTSETING.
+          </p>
+          <ul>
+            <li>Реальні сайти в портфоліо</li>
+            <li>Git, хостинг, деплой</li>
+            <li>Базовий дизайн & UX</li>
+          </ul>
+          <button class="btn btn-ghost" data-scrollTo="#signup">
+            Хочу створювати сайти
+          </button>
+        </article>
+
+        <article class="course-card reveal">
+          <h3>Python & Bots</h3>
+          <p>
+            Python з нуля, боти в Telegram, автоматизація, перші кроки до
+            Data Science та blockchain-проєктів.
+          </p>
+          <ul>
+            <li>Python основи + практичні задачі</li>
+            <li>Створення власного Telegram-бота</li>
+            <li>Підключення до ALTSETING Miner</li>
+          </ul>
+          <button class="btn btn-ghost" data-scrollTo="#signup">
+            Почати Python
+          </button>
+        </article>
+
+        <article class="course-card reveal">
+          <h3>Fullstack Pro</h3>
+          <p>
+            Для тих, хто хоче серйозно в IT: фронтенд + бекенд, бази даних,
+            API, деплой повних проєктів.
+          </p>
+          <ul>
+            <li>3–6 місяців інтенсиву</li>
+            <li>Персональний ментор</li>
+            <li>Фінальний проєкт з реальним use-case</li>
+          </ul>
+          <button class="btn btn-ghost" data-scrollTo="#signup">
+            Вийти на новий рівень
+          </button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMATS -->
+  <section id="formats" class="section formats">
+    <div class="container section-inner">
+      <div class="section-header center reveal">
+        <span class="section-label">Формати навчання</span>
+        <h2>Обери, як тобі зручно вчитись</h2>
+      </div>
+
+      <div class="formats-grid">
+        <div class="format-card reveal">
+          <h3>Онлайн формат</h3>
+          <ul>
+            <li>Зайняття через Zoom / Meet</li>
+            <li>Запис кожного уроку</li>
+            <li>Домашні завдання і фідбек в чаті</li>
+            <li>Підходить з будь-якої країни</li>
+          </ul>
+          <button class="btn btn-primary" data-scrollTo="#online-form">
+            Записатись онлайн
+          </button>
+        </div>
+
+        <div class="format-card reveal">
+          <h3>Офлайн формат</h3>
+          <ul>
+            <li>Навчання в нашому просторі</li>
+            <li>Живе спілкування з менторами</li>
+            <li>Команда, нетворкінг, енергія</li>
+            <li>Техніка та інтернет уже є</li>
+          </ul>
+          <button class="btn btn-secondary" data-scrollTo="#offline-form">
+            Записатись офлайн
+          </button>
+        </div>
+      </div>
+
+      <div class="steps reveal">
+        <div class="step">
+          <span class="step-number">1</span>
+          <div>
+            <h4>Залишаєш заявку</h4>
+            <p>Онлайн або офлайн — 1 хвилина часу.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-number">2</span>
+          <div>
+            <h4>Ми телефонуємо</h4>
+            <p>Уточнюємо вік, рівень, цілі та підбираємо курс.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-number">3</span>
+          <div>
+            <h4>Пробний урок</h4>
+            <p>Тестуєш формат без ризику та зобов’язань.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-number">4</span>
+          <div>
+            <h4>Старт навчання</h4>
+            <p>Отримуєш план, доступ до матеріалів і підтримку.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENTORS -->
+  <section id="mentors" class="section mentors">
+    <div class="container section-inner">
+      <div class="section-header center reveal">
+        <span class="section-label">Ментори</span>
+        <h2>Команда Rabbit IT</h2>
+      </div>
+
+      <div class="mentors-grid">
+        <article class="mentor-card reveal">
+          <div class="mentor-avatar placeholder-avatar">VL</div>
+          <h3>Влад</h3>
+          <p>Фулстек-розробник, Solidity, Web3, боти, архітектура ALTSETING.</p>
+          <span class="mentor-tag">Практика > теорія</span>
+        </article>
+        <article class="mentor-card reveal">
+          <div class="mentor-avatar placeholder-avatar">DM</div>
+          <h3>Діма</h3>
+          <p>Фронтенд, анімації, UI/UX, мікс коду і креативу для сайтів та NFT.</p>
+          <span class="mentor-tag">Сайти, що хочеться показати</span>
+        </article>
+        <article class="mentor-card reveal">
+          <div class="mentor-avatar placeholder-avatar">DN</div>
+          <h3>Дініс</h3>
+          <p>3D/2D персонажі, SETI, META, гейміфікація й візуальний сторітелінг.</p>
+          <span class="mentor-tag">Код + стиль</span>
+        </article>
+        <article class="mentor-card reveal">
+          <div class="mentor-avatar placeholder-avatar">KR</div>
+          <h3>Кіра</h3>
+          <p>Комунікація, підтримка учнів, організація онлайн/офлайн груп.</p>
+          <span class="mentor-tag">Твій people-manager</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIGNUP -->
+  <section id="signup" class="section signup">
+    <div class="container section-inner">
+      <div class="section-header center reveal">
+        <span class="section-label">Запис на навчання</span>
+        <h2>Залиш заявку — ми підберемо курс і формат</h2>
+        <p>Заповни форму нижче, і ми зв’яжемося з тобою протягом дня.</p>
+      </div>
+
+      <div class="signup-grid">
+        <!-- ONLINE FORM -->
+        <form id="online-form" class="form-card reveal">
+          <h3>Онлайн навчання</h3>
+
+          <label>
+            Ім'я та прізвище
+            <input type="text" name="name" required placeholder="Наприклад: Олександр Іванов" />
+          </label>
+
+          <label>
+            Вік
+            <input type="number" name="age" min="7" max="99" required placeholder="Наприклад: 15" />
+          </label>
+
+          <label>
+            Телефон (Telegram / Viber)
+            <input type="tel" name="phone" required placeholder="+48 ..." />
+          </label>
+
+          <label>
+            Email
+            <input type="email" name="email" required placeholder="name@example.com" />
+          </label>
+
+          <label>
+            Обери курс
+            <select name="course" required>
+              <option value="">Оберіть курс</option>
+              <option value="junior">Junior Coding (9–13)</option>
+              <option value="web">Web Development (14+)</option>
+              <option value="python">Python & Bots</option>
+              <option value="fullstack">Fullstack Pro</option>
+            </select>
+          </label>
+
+          <label>
+            Коментар / рівень
+            <textarea name="comment" rows="3" placeholder="Напиши, чи вже маєш досвід і що хочеш вивчити"></textarea>
+          </label>
+
+          <button type="submit" class="btn btn-primary full-width">
+            Відправити онлайн-заявку
+          </button>
+
+          <p class="form-note">
+            Натискаючи кнопку, ви погоджуєтесь на обробку персональних даних.
+          </p>
+
+          <p class="form-success" id="online-success"></p>
+        </form>
+
+        <!-- OFFLINE FORM -->
+        <form id="offline-form" class="form-card reveal">
+          <h3>Офлайн навчання</h3>
+
+          <label>
+            Ім'я та прізвище
+            <input type="text" name="name" required placeholder="Наприклад: Марія Коваленко" />
+          </label>
+
+          <label>
+            Вік
+            <input type="number" name="age" min="7" max="99" required placeholder="Наприклад: 17" />
+          </label>
+
+          <label>
+            Телефон
+            <input type="tel" name="phone" required placeholder="+48 ..." />
+          </label>
+
+          <label>
+            Місто / локація
+            <input type="text" name="city" required placeholder="Наприклад: Warszawa" />
+          </label>
+
+          <label>
+            Обери курс
+            <select name="course" required>
+              <option value="">Оберіть курс</option>
+              <option value="junior">Junior Coding</option>
+              <option value="web">Web Development</option>
+              <option value="python">Python & Bots</option>
+              <option value="intensive">Інтенсивний курс</option>
+            </select>
+          </label>
+
+          <label>
+            Бажаний графік
+            <textarea name="schedule" rows="3" placeholder="Дні та час, коли зручно займатись"></textarea>
+          </label>
+
+          <button type="submit" class="btn btn-secondary full-width">
+            Відправити офлайн-заявку
+          </button>
+
+          <p class="form-note">
+            Ми зв’яжемося з вами, щоб підтвердити час та адресу.
+          </p>
+
+          <p class="form-success" id="offline-success"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section faq">
+    <div class="container section-inner">
+      <div class="section-header center reveal">
+        <span class="section-label">FAQ</span>
+        <h2>Часті запитання</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item reveal">
+          <button class="faq-question">
+            З якого віку можна доєднатись?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Ми працюємо з учнями від 9 років і до дорослих. Групи формуються за віком та рівнем.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-question">
+            Що потрібно для онлайн-уроків?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Комп’ютер або ноутбук, стабільний інтернет та встановлений браузер (Chrome / Edge).</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-question">
+            Чи можна спробувати один урок безкоштовно?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Так, перший пробний урок безкоштовний — щоб зрозуміти, чи підходить формат саме вам.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-question">
+            Що таке ALTST і кешбек за навчання?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              ALTST — це криптовалюта ALTSETING. Учні Rabbit IT можуть отримувати кешбек в ALTST за
+              навчання та активність, а в майбутньому — розраховуватись нею у партнерських бізнесах.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTS -->
+  <section id="contacts" class="section contacts">
+    <div class="container section-inner">
+      <div class="section-header reveal">
+        <span class="section-label">Контакти</span>
+        <h2>Напиши нам, якщо є питання</h2>
+      </div>
+
+      <div class="contacts-grid">
+        <div class="contacts-info reveal">
+          <h3>Rabbit IT • школа програмування</h3>
+          <p>
+            Ми зараз на етапі активного запуску, тому багато чого будується разом із нашими першими
+            студентами. Ти реально можеш бути в основі цього руху.
+          </p>
+
+          <ul class="contacts-list">
+            <li><strong>Telegram:</strong> @your_rabbit_it</li>
+            <li><strong>Email:</strong> hello@rabbitit.school</li>
+            <li><strong>Instagram:</strong> @rabbit.it.school</li>
+            <li><strong>Адреса офлайн-простору:</strong> (додаси сам)</li>
+          </ul>
+        </div>
+
+        <div class="contacts-map reveal">
+          <div class="map-placeholder">
+            <span>Тут може бути карта з Google Maps 🗺️</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <span>© <span id="year"></span> Rabbit IT</span>
+        <span>Створено з ❤️ командою ALTSETING</span>
+      </div>
+      <div class="footer-right">
+        <a href="#hero">Угору ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
