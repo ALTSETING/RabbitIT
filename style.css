@@ -1124,3 +1124,14 @@ label textarea:focus {
   }
 }
 
+.seo-text {
+  max-width: 900px;
+  margin-top: 18px;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+.seo-text h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
