@@ -14,15 +14,19 @@ export default async function handler(req, res) {
     comment
   } = req.body;
 
-  const transporter = nodemailer.createTransport({
-    host: "mail.privateemail.com",
-    port: 587,
-    secure: false,
-    auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
-    },
-  });
+ const transporter = nodemailer.createTransport({
+  host: "mail.privateemail.com",
+  port: 465,
+  secure: true,
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
+  },
+  tls: {
+    rejectUnauthorized: false, 
+  },
+});
+
 
   try {
     await transporter.sendMail({
