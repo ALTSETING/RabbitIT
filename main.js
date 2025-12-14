@@ -82,29 +82,6 @@ document.querySelectorAll(".faq-item").forEach((item) => {
   });
 });
 
-// Форми: просто показуємо повідомлення (поки без бекенду)
-function handleForm(formId, successId) {
-  const form = document.getElementById(formId);
-  const success = document.getElementById(successId);
-
-  if (!form || !success) return;
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const formData = new FormData(form);
-    const name = formData.get("name") || "Учень";
-
-    success.textContent = `Дякуємо, ${name}! Заявка відправлена. Ми зв’яжемося з тобою найближчим часом.`;
-    form.reset();
-
-    // Невелика анімація прозорості
-    success.style.opacity = "0";
-    success.style.transition = "opacity 0.3s ease";
-    requestAnimationFrame(() => {
-      success.style.opacity = "1";
-    });
-  });
-}
 
 //online
 
