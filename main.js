@@ -108,3 +108,27 @@ function handleForm(formId, successId) {
 
 handleForm("online-form", "online-success");
 handleForm("offline-form", "offline-success");
+
+document.getElementById("online-form").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const form = e.target;
+  const data = Object.fromEntries(new FormData(form));
+  const success = document.getElementById("online-success");
+
+  const res = await fetch("/api/online", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+
+  if (res.ok) {
+    success.textContent =
+      "Дякуємо! Онлайн-заявка відправлена. Ми звʼяжемося з вами найближчим часом.";
+    form.reset();
+  } else {
+    success.textContent =
+      "Помилка відправки. Спробуйте ще раз.";
+  }
+});
+
