@@ -29,6 +29,8 @@ export default async function handler(req, res) {
 
 
   try {
+    await transporter.verify(); 
+    
     await transporter.sendMail({
       from: `"Rabbit IT" <${process.env.EMAIL_USER}>`,
       to: "student.online@rabbit.academy",
