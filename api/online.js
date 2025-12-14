@@ -1,39 +1,18 @@
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Method not allowed" });
   }
 
-  const {
-    name,
-    age,
-    phone,
-    email,
-    course,
-    comment
-  } = req.body;
-
- const transporter = nodemailer.createTransport({
-  host: "mail.privateemail.com",
-  port: 465,
-  secure: true,
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-  tls: {
-    rejectUnauthorized: false, 
-  },
-});
-
+  const { name, age, phone, email, course, comment } = req.body;
 
   try {
-    await transporter.verify(); 
-    
-    await transporter.sendMail({
-      from: `"Rabbit IT" <${process.env.EMAIL_USER}>`,
-      to: "student.online@rabbit.academy",
+    await resend.emails.send({
+      from: "Rabbit IT <noreply@rabbit.academy>",
+      to: ["student.online@rabbit.academy"],
       subject: "🐇 Нова ОНЛАЙН-заявка — Rabbit IT",
       html: `
         <h2>Нова онлайн-заявка</h2>
@@ -47,11 +26,8 @@ export default async function handler(req, res) {
     });
 
     res.status(200).json({ success: true });
-  }catch (error) {
-  console.error("SMTP ERROR:", error);
-  res.status(500).json({
-    success: false,
-    error: error.message,
-  });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ success: false });
+  }
 }
-
