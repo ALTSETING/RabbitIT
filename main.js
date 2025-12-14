@@ -106,6 +106,8 @@ function handleForm(formId, successId) {
   });
 }
 
+//online
+
 document.getElementById("online-form").addEventListener("submit", async (e) => {
   e.preventDefault();
 
@@ -123,6 +125,34 @@ document.getElementById("online-form").addEventListener("submit", async (e) => {
     if (res.ok) {
       success.textContent =
         "Дякуємо! Онлайн-заявка відправлена. Ми звʼяжемося з вами найближчим часом.";
+      form.reset();
+    } else {
+      success.textContent = "Помилка відправки. Спробуйте ще раз.";
+    }
+  } catch (err) {
+    success.textContent = "Помилка зʼєднання з сервером.";
+  }
+});
+
+//offline
+
+document.getElementById("offline-form").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const form = e.target;
+  const data = Object.fromEntries(new FormData(form));
+  const success = document.getElementById("offline-success");
+
+  try {
+    const res = await fetch("/api/offline", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+
+    if (res.ok) {
+      success.textContent =
+        "Дякуємо! Офлайн-заявка відправлена. Ми звʼяжемося з вами найближчим часом.";
       form.reset();
     } else {
       success.textContent = "Помилка відправки. Спробуйте ще раз.";
