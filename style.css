@@ -1018,6 +1018,11 @@ label textarea:focus {
   background: rgba(5, 7, 18, 0.9);
 }
 
+.contacts-map {
+  grid-column: 1 / -1;
+}
+
+
 /* FOOTER */
 .footer {
   border-top: 1px solid rgba(255, 255, 255, 0.06);
