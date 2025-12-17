@@ -959,9 +959,10 @@ label textarea:focus {
 /* CONTACTS */
 .contacts-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  grid-template-columns: 1fr;
   gap: 24px;
 }
+
 
 .contacts-info p {
   color: var(--muted);
