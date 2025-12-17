@@ -418,130 +418,68 @@ src="https://www.facebook.com/tr?id=1372648924347857&ev=PageView&noscript=1"
       </div>
 
       <div class="signup-grid">
-        <!-- ONLINE FORM -->
-        <form id="online-form" class="form-card reveal">
-          <h3>Онлайн навчання</h3>
 
-          <label>
-            Ім'я та прізвище
-            <input type="text" name="name" required placeholder="Наприклад: Олександр Іванов" />
-          </label>
-
-          <label>
-            Вік
-            <input type="number" name="age" min="7" max="99" required placeholder="Наприклад: 15" />
-          </label>
-
-          <label>
-            Телефон (Telegram / Viber)
-            <input type="tel" name="phone" required placeholder="+48 ..." />
-          </label>
-
-          <label>
-            Email
-            <input type="email" name="email" required placeholder="name@example.com" />
-          </label>
-
-          <label>
-            Обери курс
-            <select name="course" required>
-              <option value="">Оберіть курс</option>
-              <option value="junior">Junior Coding (9–13)</option>
-              <option value="web">Web Development (14+)</option>
-              <option value="python">Python & Bots</option>
-              <option value="fullstack">Fullstack Pro</option>
-            </select>
-          </label>
-
-          <label>
-            Коментар / рівень
-            <textarea name="comment" rows="3" placeholder="Напиши, чи вже маєш досвід і що хочеш вивчити"></textarea>
-          </label>
-
-          <button type="submit" class="btn btn-primary full-width">
-            Відправити онлайн-заявку
-          </button>
-
-          <p class="form-note">
-            Натискаючи кнопку, ви погоджуєтесь на обробку персональних даних.
-          </p>
-
-          <p class="form-success" id="online-success"></p>
-        </form>
+        
 <form
   action="https://formspree.io/f/xdkqqppg"
   method="POST"
-  class="form-card"
+  class="form-card reveal"
 >
-  <input type="hidden" name="type" value="ONLINE">
+  <h3>Запис на навчання</h3>
 
-  <input type="text" name="name" placeholder="Ім'я" required>
-  <input type="number" name="age" placeholder="Вік" required>
-  <input type="tel" name="phone" placeholder="Телефон" required>
-  <input type="email" name="email" placeholder="Email">
-  <select name="course">
-    <option>Web</option>
-    <option>Python</option>
-    <option>Junior</option>
-  </select>
-  <textarea name="comment" placeholder="Коментар"></textarea>
+  <input type="hidden" name="project" value="Rabbit IT">
 
-  <button type="submit">Відправити заявку</button>
+  <label>
+    Імʼя та прізвище
+    <input type="text" name="name" required>
+  </label>
+
+  <label>
+    Вік
+    <input type="number" name="age" required>
+  </label>
+
+  <label>
+    Телефон (Telegram / Viber)
+    <input type="tel" name="phone" required>
+  </label>
+
+  <label>
+    Email
+    <input type="email" name="email">
+  </label>
+
+  <label>
+    Формат навчання
+    <select name="format" required>
+      <option value="online">Онлайн</option>
+      <option value="offline">Офлайн</option>
+    </select>
+  </label>
+
+  <label>
+    Курс
+    <select name="course" required>
+      <option>Junior С++</option>
+      <option>Web Development</option>
+      <option>Python & Bots</option>
+      <option>Fullstack</option>
+    </select>
+  </label>
+
+  <label>
+    Коментар
+    <textarea name="comment"></textarea>
+  </label>
+
+  <button type="submit" class="btn btn-primary full-width">
+    Відправити заявку
+  </button>
+
+  <p class="form-note">
+    Після відправки ми звʼяжемося з вами протягом дня
+  </p>
 </form>
-
-        <!-- OFFLINE FORM -->
-        <form id="offline-form" class="form-card reveal">
-          <h3>Офлайн навчання</h3>
-
-          <label>
-            Ім'я та прізвище
-            <input type="text" name="name" required placeholder="Наприклад: Марія Коваленко" />
-          </label>
-
-          <label>
-            Вік
-            <input type="number" name="age" min="7" max="99" required placeholder="Наприклад: 17" />
-          </label>
-
-          <label>
-            Телефон
-            <input type="tel" name="phone" required placeholder="+48 ..." />
-          </label>
-
-          <label>
-            Місто / локація
-            <input type="text" name="city" required placeholder="Наприклад: Warszawa" />
-          </label>
-
-          <label>
-            Обери курс
-            <select name="course" required>
-              <option value="">Оберіть курс</option>
-              <option value="junior">Junior Coding</option>
-              <option value="web">Web Development</option>
-              <option value="python">Python & Bots</option>
-              <option value="intensive">Інтенсивний курс</option>
-            </select>
-          </label>
-
-          <label>
-            Бажаний графік
-            <textarea name="schedule" rows="3" placeholder="Дні та час, коли зручно займатись"></textarea>
-          </label>
-
-          <button type="submit" class="btn btn-secondary full-width">
-            Відправити офлайн-заявку
-          </button>
-
-          <p class="form-note">
-            Ми зв’яжемося з вами, щоб підтвердити час та адресу.
-          </p>
-
-          <p class="form-success" id="offline-success"></p>
-        </form>
-      </div>
-    </div>
-  </section>
 
   <!-- FAQ -->
   <section id="faq" class="section faq">
