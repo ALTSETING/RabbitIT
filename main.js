@@ -27,12 +27,28 @@ function smoothScrollTo(target) {
 document.querySelectorAll("[data-scrollTo]").forEach((btn) => {
   btn.addEventListener("click", (e) => {
     const target = btn.getAttribute("data-scrollTo");
-    if (target) {
+    if (!target) return;
+
+    // URL → відкриваємо сторінку
+    if (target.startsWith("/")) {
+      window.location.href = target;
+      return;
+    }
+
+    // Якір → плавний скрол
+    if (target.startsWith("#")) {
+      const el = document.querySelector(target);
+      if (!el) return;
+
       e.preventDefault();
-      smoothScrollTo(target);
+      el.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     }
   });
 });
+
 
 // Burger + mobile nav
 const burger = document.getElementById("burger");
