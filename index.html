@@ -543,7 +543,10 @@ src="https://www.facebook.com/tr?id=1372648924347857&ev=PageView&noscript=1"
   <h3>Запис на навчання</h3>
 
   <input type="hidden" name="project" value="Rabbit IT">
+  
+  <input type="hidden" name="partner_ref" id="partner_ref">
 
+  
   <label>
     Імʼя та прізвище
     <input type="text" name="name" required>
@@ -723,5 +726,24 @@ src="https://www.facebook.com/tr?id=1372648924347857&ev=PageView&noscript=1"
   </footer>
 
   <script src="main.js"></script>
+
+        <script>
+  const params = new URLSearchParams(window.location.search);
+  const ref = params.get('ref');
+
+  if (ref && !localStorage.getItem('partner_ref')) {
+    localStorage.setItem('partner_ref', ref);
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const savedRef = localStorage.getItem('partner_ref');
+    if (savedRef) {
+      const input = document.getElementById('partner_ref');
+      if (input) {
+        input.value = savedRef;
+      }
+    }
+  });
+</script>
 </body>
 </html>
