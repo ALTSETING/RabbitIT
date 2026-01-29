@@ -1,0 +1,111 @@
+:root{
+  --bg:#0b0d12;
+  --card:#141826;
+  --border:rgba(255,255,255,.08);
+  --text:#f5f7ff;
+  --muted:#b3bdd6;
+  --accent:#ff9f0a;
+}
+
+/* кнопка */
+.chat-fab{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  width:56px;
+  height:56px;
+  border-radius:18px;
+  border:none;
+  cursor:pointer;
+  font-size:22px;
+  background:linear-gradient(135deg,#ff9f0a,#ffcc66);
+  color:#0b0d12;
+  z-index:9999;
+}
+
+/* вікно */
+.chat-box{
+  position:fixed;
+  right:18px;
+  bottom:90px;
+  width:340px;
+  height:460px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:22px;
+  display:none;
+  flex-direction:column;
+  z-index:9999;
+}
+
+/* header */
+.chat-header{
+  padding:12px 14px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid var(--border);
+  color:var(--text);
+  font-weight:700;
+}
+
+.chat-header button{
+  background:none;
+  border:none;
+  color:var(--text);
+  cursor:pointer;
+  font-size:18px;
+}
+
+/* messages */
+.chat-messages{
+  flex:1;
+  padding:14px;
+  overflow-y:auto;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.msg{
+  max-width:80%;
+  padding:10px 12px;
+  border-radius:16px;
+  font-size:14px;
+}
+
+.msg.bot{
+  background:rgba(255,255,255,.06);
+  color:var(--text);
+}
+
+.msg.user{
+  align-self:flex-end;
+  background:rgba(255,159,10,.2);
+  color:var(--text);
+}
+
+/* input */
+.chat-input{
+  display:flex;
+  gap:8px;
+  padding:12px;
+  border-top:1px solid var(--border);
+}
+
+.chat-input input{
+  flex:1;
+  padding:10px 12px;
+  border-radius:14px;
+  border:1px solid var(--border);
+  background:#0f1219;
+  color:var(--text);
+}
+
+.chat-input button{
+  width:40px;
+  border:none;
+  border-radius:14px;
+  cursor:pointer;
+  background:linear-gradient(135deg,#ff9f0a,#ffcc66);
+}
