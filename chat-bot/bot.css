@@ -17,11 +17,54 @@
   border-radius:18px;
   border:none;
   cursor:pointer;
-  font-size:22px;
   background:linear-gradient(135deg,#ff9f0a,#ffcc66);
   color:#0b0d12;
   z-index:9999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 16px 30px rgba(255,159,10,.35);
 }
+.chat-fab-rabbit{
+  position:relative;
+  width:26px;
+  height:26px;
+  border-radius:50%;
+  background:radial-gradient(circle at 30% 30%, #ffffff, #dfe4ff);
+  box-shadow:0 0 16px rgba(255,255,255,.6);
+  animation:rabbitPulse 2.2s ease-in-out infinite;
+}
+
+.chat-fab-rabbit::before,
+.chat-fab-rabbit::after{
+  content:"";
+  position:absolute;
+  top:-14px;
+  width:10px;
+  height:20px;
+  border-radius:999px;
+  background:linear-gradient(180deg,#ffffff,#cfd6ff);
+}
+
+.chat-fab-rabbit::before{
+  left:-2px;
+  transform:rotate(-8deg);
+}
+
+.chat-fab-rabbit::after{
+  right:-2px;
+  transform:rotate(8deg);
+}
+
+@keyframes rabbitPulse{
+  0%,100%{
+    transform:scale(1);
+    box-shadow:0 0 16px rgba(255,255,255,.6);
+  }
+  50%{
+    transform:scale(1.08);
+    box-shadow:0 0 24px rgba(255,255,255,.85);
+  }
 
 /* вікно */
 .chat-box{
