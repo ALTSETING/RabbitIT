@@ -749,11 +749,33 @@ src="https://www.facebook.com/tr?id=1372648924347857&ev=PageView&noscript=1"
     }
   });
 </script>
-          <iframe
-    src="/chat-bot/bot.html"
-    style="border:none;width:0;height:0;"
-    aria-hidden="true"
-  ></iframe>
+          <!-- Кнопка чату -->
+  <button id="chatFab" class="chat-fab">💬</button>
+
+  <!-- Вікно чату -->
+  <div id="chatBox" class="chat-box">
+    <div class="chat-header">
+      <span>Rabbit IT Bot</span>
+      <button id="chatClose">✕</button>
+    </div>
+
+    <div id="chatMessages" class="chat-messages">
+      <div class="msg bot">
+        Привіт 👋 Я бот Rabbit IT.<br>
+        Напиши, що тебе цікавить: курси, ціни або запис.
+      </div>
+    </div>
+
+    <form id="chatForm" class="chat-input">
+      <input
+        id="chatInput"
+        type="text"
+        placeholder="Напиши повідомлення..."
+        autocomplete="off"
+      />
+      <button type="submit">➤</button>
+    </form>
+  </div>
         
 </body>
 </html>
