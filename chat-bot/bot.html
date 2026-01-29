@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rabbit IT Chat</title>
+  <link rel="stylesheet" href="bot.css" />
+</head>
+<body>
+
+<!-- Кнопка чату -->
+<button id="chatFab" class="chat-fab">💬</button>
+
+<!-- Вікно чату -->
+<div id="chatBox" class="chat-box">
+  <div class="chat-header">
+    <span>Rabbit IT Bot</span>
+    <button id="chatClose">✕</button>
+  </div>
+
+  <div id="chatMessages" class="chat-messages">
+    <div class="msg bot">
+      Привіт 👋 Я бот Rabbit IT.<br>
+      Напиши, що тебе цікавить: курси, ціни або запис.
+    </div>
+  </div>
+
+  <form id="chatForm" class="chat-input">
+    <input
+      id="chatInput"
+      type="text"
+      placeholder="Напиши повідомлення..."
+      autocomplete="off"
+    />
+    <button type="submit">➤</button>
+  </form>
+</div>
+
+<script src="bot.js"></script>
+</body>
+</html>
