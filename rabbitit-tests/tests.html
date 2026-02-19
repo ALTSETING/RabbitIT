@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RabbitIT — Programming Tests</title>
+  <link rel="stylesheet" href="tests.css" />
+</head>
+<body>
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">R</div>
+      <div class="brand-text">
+        <div class="name">RabbitIT</div>
+        <div class="tag">Programming Tests</div>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="#tests">Тести</a>
+      <a href="#how">Як це працює</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-left">
+        <h1>Перевір свій рівень в IT за 10–15 хвилин</h1>
+        <p class="muted">
+          Обери тест, відповідай на питання, отримай результат одразу.
+          Після цього можеш залишити контакт — надішлемо короткий план навчання.
+        </p>
+        <div class="hero-actions">
+          <button class="btn primary" id="startFromTop">Почати тест</button>
+          <button class="btn ghost" id="showExamples">Подивитись приклади</button>
+        </div>
+
+        <div class="chips">
+          <span class="chip">Безкоштовно</span>
+          <span class="chip">Без реєстрації</span>
+          <span class="chip">Результат одразу</span>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="card big">
+          <div class="card-top">
+            <div class="badge">New</div>
+            <div class="mini muted">Підійде для Junior / Middle</div>
+          </div>
+          <div class="stat-grid">
+            <div class="stat">
+              <div class="stat-num">5</div>
+              <div class="stat-label">напрямів</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">10–15</div>
+              <div class="stat-label">хвилин</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">12</div>
+              <div class="stat-label">питань</div>
+            </div>
+          </div>
+
+          <div class="progress-demo">
+            <div class="progress-label">
+              <span>Прогрес</span>
+              <span class="muted">3/12</span>
+            </div>
+            <div class="bar"><div class="bar-in" style="width:25%"></div></div>
+          </div>
+
+          <div class="quote muted">
+            “Після тесту ми даємо короткий роадмап на 7 днів — що підтягнути та з чого почати.”
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEST LIST -->
+    <section id="tests" class="section">
+      <div class="section-title">
+        <h2>Обери тест</h2>
+        <div class="actions">
+          <input class="input" id="search" placeholder="Пошук: JS, Python, Git..." />
+          <select class="input" id="levelFilter">
+            <option value="all">Усі рівні</option>
+            <option value="Beginner">Beginner</option>
+            <option value="Junior">Junior</option>
+            <option value="Middle">Middle</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="grid" id="testGrid"></div>
+    </section>
+
+    <!-- TEST RUNNER -->
+    <section id="runner" class="section hidden">
+      <div class="runner-top">
+        <button class="btn ghost" id="backToList">← Назад</button>
+        <div class="runner-meta">
+          <div class="runner-title" id="runnerTitle">Тест</div>
+          <div class="runner-sub muted" id="runnerSub">—</div>
+        </div>
+        <div class="runner-right">
+          <div class="pill" id="timerPill">⏱ <span id="timerText">—</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="q-top">
+          <div class="q-count" id="qCount">Питання 1/12</div>
+          <div class="q-bar"><div class="q-bar-in" id="qBarIn" style="width:0%"></div></div>
+        </div>
+
+        <div class="q-body">
+          <div class="q-text" id="qText"></div>
+          <pre class="code hidden" id="qCode"></pre>
+
+          <div class="answers" id="answers"></div>
+
+          <div class="q-actions">
+            <button class="btn ghost" id="prevBtn">Назад</button>
+            <button class="btn primary" id="nextBtn">Далі</button>
+          </div>
+
+          <div class="mini muted" id="hintBox"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULT -->
+    <section id="result" class="section hidden">
+      <div class="section-title">
+        <h2>Твій результат</h2>
+        <div class="mini muted" id="resultMeta">—</div>
+      </div>
+
+      <div class="grid2">
+        <div class="card">
+          <div class="score">
+            <div class="score-num" id="scoreNum">0%</div>
+            <div class="score-level" id="scoreLevel">—</div>
+          </div>
+          <div class="mini muted" id="scoreDesc">—</div>
+
+          <div class="topics" id="topics"></div>
+
+          <div class="q-actions">
+            <button class="btn ghost" id="retryBtn">Пройти ще раз</button>
+            <button class="btn primary" id="chooseAnotherBtn">Обрати інший тест</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="h3">Отримати план навчання</h3>
+          <p class="muted mini">
+            Залиш контакт — ми надішлемо результат + короткий план на 7 днів.
+          </p>
+
+          <form id="leadForm" class="form">
+            <label class="label">Ім’я</label>
+            <input class="input" name="name" placeholder="Напр. Kotyk" required />
+
+            <label class="label">Telegram або Email</label>
+            <input class="input" name="contact" placeholder="@username або email" required />
+
+            <label class="checkbox">
+              <input type="checkbox" name="consent" required />
+              <span>Я погоджуюсь на контакт від RabbitIT щодо навчання</span>
+            </label>
+
+            <button class="btn primary" type="submit">Надіслати</button>
+            <div class="mini" id="leadMsg"></div>
+          </form>
+
+          <div class="divider"></div>
+          <div class="mini muted">
+            *Зараз форма зберігає лід локально (localStorage). Потім легко підключиш API.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW -->
+    <section id="how" class="section">
+      <div class="section-title">
+        <h2>Як це працює</h2>
+      </div>
+
+      <div class="grid3">
+        <div class="card">
+          <div class="step">1</div>
+          <h3 class="h3">Обираєш тест</h3>
+          <p class="muted mini">JS, Python, HTML/CSS, логіка або Git.</p>
+        </div>
+        <div class="card">
+          <div class="step">2</div>
+          <h3 class="h3">Відповідаєш</h3>
+          <p class="muted mini">12 питань, є приклади з кодом і практикою.</p>
+        </div>
+        <div class="card">
+          <div class="step">3</div>
+          <h3 class="h3">Отримуєш результат</h3>
+          <p class="muted mini">Рівень + сильні/слабкі теми + план.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section">
+      <div class="section-title">
+        <h2>FAQ</h2>
+      </div>
+
+      <div class="faq">
+        <details class="card">
+          <summary>Чи треба реєстрація?</summary>
+          <div class="muted mini">Ні. Тест проходиться одразу. Контакт — лише якщо хочеш план навчання.</div>
+        </details>
+        <details class="card">
+          <summary>Як оцінюється результат?</summary>
+          <div class="muted mini">За кількістю правильних відповідей + точками по темам (topics).</div>
+        </details>
+        <details class="card">
+          <summary>Можна додати свої питання?</summary>
+          <div class="muted mini">Так. Додаєш/редагуєш JSON у папці <code>/questions</code>.</div>
+        </details>
+      </div>
+    </section>
+
+    <!-- EXAMPLES MODAL -->
+    <div class="modal hidden" id="modal">
+      <div class="modal-card">
+        <div class="modal-top">
+          <div class="h3">Приклади питань</div>
+          <button class="btn ghost" id="closeModal">✕</button>
+        </div>
+        <div class="modal-body">
+          <div class="example">
+            <div class="ex-q">JS: Що виведе код?</div>
+            <pre class="code">console.log(typeof null);</pre>
+            <div class="muted mini">Підказка: це класична пастка в JS.</div>
+          </div>
+          <div class="example">
+            <div class="ex-q">Python: Який результат?</div>
+            <pre class="code">print([x*x for x in range(3)])</pre>
+          </div>
+          <div class="example">
+            <div class="ex-q">Git: Для чого команда?</div>
+            <pre class="code">git checkout -b feature/login</pre>
+          </div>
+        </div>
+      </div>
+      <div class="modal-bg" id="modalBg"></div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="muted mini">© RabbitIT — tests page • зроблено під швидкий запуск</div>
+  </footer>
+
+  <script src="tests.js"></script>
+</body>
+</html>
