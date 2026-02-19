@@ -1,0 +1,134 @@
+{
+  "title": "JavaScript Test",
+  "version": 1,
+  "questions": [
+    {
+      "id": "js-1",
+      "type": "single",
+      "text": "Що виведе typeof null у JavaScript?",
+      "code": "console.log(typeof null);",
+      "options": ["\"null\"", "\"object\"", "\"undefined\"", "\"number\""],
+      "correct": 1,
+      "topics": ["types", "basics"],
+      "hint": "Це історична особливість JS."
+    },
+    {
+      "id": "js-2",
+      "type": "single",
+      "text": "Який результат?",
+      "code": "console.log(1 + '2' + 3);",
+      "options": ["6", "\"123\"", "\"33\"", "\"15\""],
+      "correct": 1,
+      "topics": ["types", "basics"]
+    },
+    {
+      "id": "js-3",
+      "type": "single",
+      "text": "Який метод перетворює JSON-рядок у об’єкт?",
+      "options": ["JSON.parse()", "JSON.stringify()", "Object.toJSON()", "parseJSON()"],
+      "correct": 0,
+      "topics": ["basics"]
+    },
+    {
+      "id": "js-4",
+      "type": "multi",
+      "text": "Які значення вважаються falsy?",
+      "options": ["0", "\"0\"", "null", "[]", "undefined", "NaN", "\"\""],
+      "correct": [0, 2, 4, 5, 6],
+      "topics": ["types", "basics"],
+      "hint": "[] — truthy."
+    },
+    {
+      "id": "js-5",
+      "type": "single",
+      "text": "Що робить Array.prototype.map()?",
+      "options": [
+        "Змінює масив на місці",
+        "Повертає новий масив результатів функції",
+        "Фільтрує елементи по умові",
+        "Сортує масив"
+      ],
+      "correct": 1,
+      "topics": ["basics"]
+    },
+    {
+      "id": "js-6",
+      "type": "single",
+      "text": "Який результат?",
+      "code": "const a = [1,2,3];\nconst b = a;\nb.push(4);\nconsole.log(a.length);",
+      "options": ["3", "4", "0", "Помилка"],
+      "correct": 1,
+      "topics": ["basics"]
+    },
+    {
+      "id": "js-7",
+      "type": "single",
+      "text": "Навіщо використовують async/await?",
+      "options": [
+        "Для паралельного виконання циклів",
+        "Щоб писати асинхронний код читабельніше поверх Promise",
+        "Щоб зробити код швидшим за будь-яких умов",
+        "Щоб замінити setTimeout"
+      ],
+      "correct": 1,
+      "topics": ["async"]
+    },
+    {
+      "id": "js-8",
+      "type": "single",
+      "text": "Як правильно додати обробник події кліку?",
+      "options": [
+        "el.onClick = handler()",
+        "el.addEventListener('click', handler)",
+        "el.click(handler)",
+        "el.add('click', handler)"
+      ],
+      "correct": 1,
+      "topics": ["dom"]
+    },
+    {
+      "id": "js-9",
+      "type": "single",
+      "text": "Що поверне querySelector?",
+      "options": [
+        "Масив усіх елементів",
+        "Перший елемент, що підходить під селектор або null",
+        "Завжди NodeList",
+        "Завжди HTMLCollection"
+      ],
+      "correct": 1,
+      "topics": ["dom"]
+    },
+    {
+      "id": "js-10",
+      "type": "single",
+      "text": "Яка різниця між let і const?",
+      "options": [
+        "const не можна переназначати, let можна",
+        "let не має області видимості",
+        "const завжди робить значення незмінним (immutable)",
+        "Різниці немає"
+      ],
+      "correct": 0,
+      "topics": ["basics"]
+    },
+    {
+      "id": "js-11",
+      "type": "single",
+      "text": "Що виведе код?",
+      "code": "console.log(Boolean(' '));",
+      "options": ["false", "true", "undefined", "null"],
+      "correct": 1,
+      "topics": ["types"]
+    },
+    {
+      "id": "js-12",
+      "type": "single",
+      "text": "Який результат?",
+      "code": "console.log([1,2,3].includes(2));",
+      "options": ["true", "false", "2", "Помилка"],
+      "correct": 0,
+      "topics": ["basics"]
+    }
+  ]
+}
