@@ -1,0 +1,154 @@
+{
+  "title": "Git + Dev Basics Test",
+  "version": 1,
+  "questions": [
+    {
+      "id": "gt-1",
+      "type": "single",
+      "text": "Для чого команда git init?",
+      "options": [
+        "Видаляє репозиторій",
+        "Створює новий локальний репозиторій",
+        "Відправляє код на GitHub",
+        "Оновлює git до нової версії"
+      ],
+      "correct": 1,
+      "topics": ["git", "workflow"]
+    },
+    {
+      "id": "gt-2",
+      "type": "single",
+      "text": "Що робить git clone?",
+      "options": [
+        "Створює нову гілку",
+        "Копіює віддалений репозиторій локально",
+        "Зливає гілки",
+        "Показує історію комітів"
+      ],
+      "correct": 1,
+      "topics": ["git"]
+    },
+    {
+      "id": "gt-3",
+      "type": "single",
+      "text": "Для чого git status?",
+      "options": [
+        "Показує стан файлів: staged/unstaged/untracked",
+        "Створює коміт",
+        "Відкриває налаштування GitHub",
+        "Видаляє конфлікти"
+      ],
+      "correct": 0,
+      "topics": ["git"]
+    },
+    {
+      "id": "gt-4",
+      "type": "single",
+      "text": "Що робить git add . ?",
+      "options": [
+        "Додає всі зміни в staging area",
+        "Створює новий репозиторій",
+        "Видаляє всі файли",
+        "Повертає останній коміт"
+      ],
+      "correct": 0,
+      "topics": ["git", "workflow"]
+    },
+    {
+      "id": "gt-5",
+      "type": "single",
+      "text": "Команда для створення нової гілки і переходу в неї?",
+      "options": ["git branch name", "git checkout -b name", "git merge name", "git pull name"],
+      "correct": 1,
+      "topics": ["git", "workflow"]
+    },
+    {
+      "id": "gt-6",
+      "type": "single",
+      "text": "Що робить git pull?",
+      "options": [
+        "Відправляє зміни на сервер",
+        "Завантажує і зливає зміни з remote",
+        "Видаляє локальні зміни",
+        "Створює тег"
+      ],
+      "correct": 1,
+      "topics": ["git", "workflow"]
+    },
+    {
+      "id": "gt-7",
+      "type": "single",
+      "text": "Чим відрізняється git fetch від git pull?",
+      "options": [
+        "Нічим",
+        "fetch тільки завантажує, pull завантажує + merge/rebase",
+        "pull тільки завантажує, fetch робить merge",
+        "fetch видаляє гілки"
+      ],
+      "correct": 1,
+      "topics": ["git", "workflow"]
+    },
+    {
+      "id": "gt-8",
+      "type": "multi",
+      "text": "Що з цього є хорошими практиками (best practices)?",
+      "options": [
+        "Писати зрозумілі commit messages",
+        "Комітити згенеровані файли без потреби",
+        "Робити маленькі логічні коміти",
+        "Пушити прямо в main без перевірок завжди",
+        "Використовувати .gitignore"
+      ],
+      "correct": [0, 2, 4],
+      "topics": ["workflow"]
+    },
+    {
+      "id": "gt-9",
+      "type": "single",
+      "text": "Що робить .gitignore?",
+      "options": [
+        "Шифрує репозиторій",
+        "Вказує файли/папки, які Git не повинен відстежувати",
+        "Додає файли в staging",
+        "Показує історію"
+      ],
+      "correct": 1,
+      "topics": ["git", "workflow"]
+    },
+    {
+      "id": "gt-10",
+      "type": "single",
+      "text": "Що таке merge conflict?",
+      "options": [
+        "Помилка інтернету",
+        "Коли Git не може автоматично об’єднати зміни",
+        "Коли видалили репозиторій",
+        "Коли коміт без повідомлення"
+      ],
+      "correct": 1,
+      "topics": ["workflow"]
+    },
+    {
+      "id": "gt-11",
+      "type": "single",
+      "text": "Яка команда показує історію комітів?",
+      "options": ["git story", "git log", "git past", "git commits"],
+      "correct": 1,
+      "topics": ["git"]
+    },
+    {
+      "id": "gt-12",
+      "type": "single",
+      "text": "Що робить git reset --hard?",
+      "options": [
+        "Змінює автора коміту",
+        "Скидає робочу директорію і staging до вказаного коміту (видаляє локальні зміни)",
+        "Додає файли до staging",
+        "Вирішує конфлікти автоматично"
+      ],
+      "correct": 1,
+      "topics": ["git"],
+      "hint": "Обережно: може стерти незбережені зміни."
+    }
+  ]
+}
