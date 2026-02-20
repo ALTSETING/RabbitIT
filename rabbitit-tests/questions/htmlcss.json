@@ -1,0 +1,143 @@
+{
+  "title": "HTML / CSS Test",
+  "version": 1,
+  "questions": [
+    {
+      "id": "hc-1",
+      "type": "single",
+      "text": "Який тег семантично підходить для навігації сайту?",
+      "options": ["<div>", "<nav>", "<section>", "<span>"],
+      "correct": 1,
+      "topics": ["accessibility", "basics"]
+    },
+    {
+      "id": "hc-2",
+      "type": "single",
+      "text": "Що робить CSS властивість box-sizing: border-box?",
+      "options": [
+        "Додає рамку до елемента",
+        "Включає padding і border у width/height",
+        "Забороняє margin",
+        "Робить елемент flex"
+      ],
+      "correct": 1,
+      "topics": ["layout", "basics"]
+    },
+    {
+      "id": "hc-3",
+      "type": "single",
+      "text": "Яка різниця між class і id?",
+      "options": [
+        "id можна повторювати, class — ні",
+        "class можна повторювати, id має бути унікальним",
+        "Ніякої",
+        "id працює лише в CSS, class — лише в HTML"
+      ],
+      "correct": 1,
+      "topics": ["basics"]
+    },
+    {
+      "id": "hc-4",
+      "type": "single",
+      "text": "Що таке Flexbox?",
+      "options": [
+        "Сітка тільки для таблиць",
+        "Модель розкладки для вирівнювання елементів у ряд/колонку",
+        "Тільки для анімацій",
+        "Формат зображення"
+      ],
+      "correct": 1,
+      "topics": ["layout"]
+    },
+    {
+      "id": "hc-5",
+      "type": "single",
+      "text": "Який CSS селектор вибере всі <p> всередині .box?",
+      "options": [".box + p", ".box p", "p.box", "#box p"],
+      "correct": 1,
+      "topics": ["selectors"]
+    },
+    {
+      "id": "hc-6",
+      "type": "single",
+      "text": "Що робить position: fixed?",
+      "options": [
+        "Елемент рухається разом зі скролом",
+        "Елемент фіксується відносно viewport",
+        "Елемент прив’язаний до батька",
+        "Елемент стає невидимим"
+      ],
+      "correct": 1,
+      "topics": ["layout"]
+    },
+    {
+      "id": "hc-7",
+      "type": "single",
+      "text": "Яка одиниця вимірювання залежить від ширини viewport?",
+      "options": ["px", "em", "vw", "rem"],
+      "correct": 2,
+      "topics": ["responsive"]
+    },
+    {
+      "id": "hc-8",
+      "type": "multi",
+      "text": "Що покращує доступність (accessibility)?",
+      "options": [
+        "alt текст для зображень",
+        "правильні заголовки h1-h6",
+        "використовувати тільки div",
+        "aria-label де потрібно",
+        "контрастний текст"
+      ],
+      "correct": [0, 1, 3, 4],
+      "topics": ["accessibility"]
+    },
+    {
+      "id": "hc-9",
+      "type": "single",
+      "text": "Що робить media query?",
+      "options": [
+        "Завантажує медіа файли",
+        "Змінює стилі залежно від умов (екран/ширина)",
+        "Стискає CSS",
+        "Вмикає JS"
+      ],
+      "correct": 1,
+      "topics": ["responsive"]
+    },
+    {
+      "id": "hc-10",
+      "type": "single",
+      "text": "Яка властивість відповідає за відступ всередині елемента?",
+      "options": ["margin", "padding", "gap", "border"],
+      "correct": 1,
+      "topics": ["layout", "basics"]
+    },
+    {
+      "id": "hc-11",
+      "type": "single",
+      "text": "Що робить display: grid?",
+      "options": [
+        "Робить елемент невидимим",
+        "Увімкнення сітки рядки/колонки для розкладки",
+        "Змінює шрифт",
+        "Робить все inline"
+      ],
+      "correct": 1,
+      "topics": ["layout"]
+    },
+    {
+      "id": "hc-12",
+      "type": "single",
+      "text": "Для чого атрибут for у <label>?",
+      "options": [
+        "Для кольору тексту",
+        "Зв’язує label з input по id",
+        "Для додавання margin",
+        "Для завантаження шрифтів"
+      ],
+      "correct": 1,
+      "topics": ["accessibility", "basics"]
+    }
+  ]
+}
