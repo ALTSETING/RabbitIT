@@ -1,0 +1,125 @@
+{
+  "title": "Algorithms / Logic Test",
+  "version": 1,
+  "questions": [
+    {
+      "id": "lg-1",
+      "type": "single",
+      "text": "Яка складність пошуку елемента в відсортованому масиві через бінарний пошук?",
+      "options": ["O(1)", "O(log n)", "O(n)", "O(n log n)"],
+      "correct": 1,
+      "topics": ["complexity"]
+    },
+    {
+      "id": "lg-2",
+      "type": "single",
+      "text": "Що таке стек (stack)?",
+      "options": [
+        "Структура даних FIFO",
+        "Структура даних LIFO",
+        "Завжди відсортований масив",
+        "Дерево з двома дітьми"
+      ],
+      "correct": 1,
+      "topics": ["data-structures"]
+    },
+    {
+      "id": "lg-3",
+      "type": "single",
+      "text": "Яка структура даних працює за принципом FIFO?",
+      "options": ["Stack", "Queue", "Set", "Tree"],
+      "correct": 1,
+      "topics": ["data-structures"]
+    },
+    {
+      "id": "lg-4",
+      "type": "single",
+      "text": "Скільки разів виконається цикл?",
+      "code": "for (i = 1; i <= 16; i *= 2) { ... }",
+      "options": ["4", "5", "16", "8"],
+      "correct": 1,
+      "topics": ["logic"],
+      "hint": "i = 1,2,4,8,16"
+    },
+    {
+      "id": "lg-5",
+      "type": "single",
+      "text": "Який алгоритм сортування в середньому має O(n log n)?",
+      "options": ["Bubble sort", "Quick sort", "Insertion sort", "Selection sort"],
+      "correct": 1,
+      "topics": ["complexity"]
+    },
+    {
+      "id": "lg-6",
+      "type": "single",
+      "text": "Що означає 'Big O'?",
+      "options": [
+        "Точний час виконання в мілісекундах",
+        "Оцінка зростання складності при збільшенні n",
+        "Кількість рядків коду",
+        "Розмір пам’яті відеокарти"
+      ],
+      "correct": 1,
+      "topics": ["complexity"]
+    },
+    {
+      "id": "lg-7",
+      "type": "multi",
+      "text": "Які з цих структур можуть забезпечити швидкий пошук по ключу?",
+      "options": ["HashMap / dict", "Array (несортований)", "Set", "Linked List", "Binary Search Tree (balanced)"],
+      "correct": [0, 2, 4],
+      "topics": ["data-structures"]
+    },
+    {
+      "id": "lg-8",
+      "type": "single",
+      "text": "Що таке рекурсія?",
+      "options": [
+        "Цикл без умов",
+        "Функція, яка викликає сама себе",
+        "Оптимізація пам’яті",
+        "Алгоритм тільки для сортування"
+      ],
+      "correct": 1,
+      "topics": ["logic"]
+    },
+    {
+      "id": "lg-9",
+      "type": "single",
+      "text": "Який результат кількості порівнянь у бінарному пошуку максимум?",
+      "options": ["log2(n)", "n", "n log n", "1"],
+      "correct": 0,
+      "topics": ["complexity"]
+    },
+    {
+      "id": "lg-10",
+      "type": "single",
+      "text": "Яка структура даних підходить для обходу графа в ширину (BFS)?",
+      "options": ["Stack", "Queue", "Set", "Heap"],
+      "correct": 1,
+      "topics": ["data-structures"]
+    },
+    {
+      "id": "lg-11",
+      "type": "single",
+      "text": "Що поверне вираз?",
+      "code": "!(true && false) || (false && true)",
+      "options": ["true", "false", "undefined", "Помилка"],
+      "correct": 0,
+      "topics": ["logic"]
+    },
+    {
+      "id": "lg-12",
+      "type": "single",
+      "text": "Що таке 'stable sort'?",
+      "options": [
+        "Сортування без рекурсії",
+        "Сортування, яке зберігає порядок рівних елементів",
+        "Сортування тільки чисел",
+        "Сортування за спаданням"
+      ],
+      "correct": 1,
+      "topics": ["complexity"]
+    }
+  ]
+}
