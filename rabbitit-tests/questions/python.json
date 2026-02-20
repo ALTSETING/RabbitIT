@@ -1,0 +1,140 @@
+{
+  "title": "Python Test",
+  "version": 1,
+  "questions": [
+    {
+      "id": "py-1",
+      "type": "single",
+      "text": "Що виведе цей код?",
+      "code": "print([x*x for x in range(3)])",
+      "options": ["[1, 4, 9]", "[0, 1, 4]", "[0, 1, 2]", "Помилка"],
+      "correct": 1,
+      "topics": ["lists", "basics"]
+    },
+    {
+      "id": "py-2",
+      "type": "single",
+      "text": "Який тип даних має значення None?",
+      "options": ["NoneType", "null", "undefined", "void"],
+      "correct": 0,
+      "topics": ["basics", "types"]
+    },
+    {
+      "id": "py-3",
+      "type": "single",
+      "text": "Який результат?",
+      "code": "a = [1,2,3]\nb = a\nb.append(4)\nprint(len(a))",
+      "options": ["3", "4", "0", "Помилка"],
+      "correct": 1,
+      "topics": ["lists", "basics"]
+    },
+    {
+      "id": "py-4",
+      "type": "single",
+      "text": "Чим відрізняється list від tuple?",
+      "options": [
+        "tuple змінюваний, list ні",
+        "list змінюваний, tuple — ні",
+        "tuple швидший завжди у 10 разів",
+        "Різниці немає"
+      ],
+      "correct": 1,
+      "topics": ["types", "basics"]
+    },
+    {
+      "id": "py-5",
+      "type": "single",
+      "text": "Що повертає dict.get('k') якщо ключа немає і не задано default?",
+      "options": ["KeyError", "None", "0", "\"\""],
+      "correct": 1,
+      "topics": ["basics"]
+    },
+    {
+      "id": "py-6",
+      "type": "single",
+      "text": "Який результат?",
+      "code": "s = \"hello\"\nprint(s[::-1])",
+      "options": ["olleh", "hello", "h", "Помилка"],
+      "correct": 0,
+      "topics": ["basics"]
+    },
+    {
+      "id": "py-7",
+      "type": "single",
+      "text": "Що робить ключове слово 'yield'?",
+      "options": [
+        "Зупиняє програму назавжди",
+        "Створює генератор і повертає значення по одному",
+        "Повертає значення і виходить з функції як return",
+        "Перетворює список у кортеж"
+      ],
+      "correct": 1,
+      "topics": ["functions"]
+    },
+    {
+      "id": "py-8",
+      "type": "single",
+      "text": "Який результат?",
+      "code": "def f(x=[]):\n  x.append(1)\n  return x\n\nprint(f())\nprint(f())",
+      "options": [
+        "[1] і [1]",
+        "[1] і [1, 1]",
+        "Помилка",
+        "[] і []"
+      ],
+      "correct": 1,
+      "topics": ["functions", "basics"],
+      "hint": "Мутований default-аргумент зберігається між викликами."
+    },
+    {
+      "id": "py-9",
+      "type": "multi",
+      "text": "Які твердження правдиві?",
+      "options": [
+        "set не містить дублікатів",
+        "list хешується і може бути ключем dict",
+        "dict зберігає пари ключ-значення",
+        "tuple завжди змінюваний",
+        "range створює послідовність чисел"
+      ],
+      "correct": [0, 2, 4],
+      "topics": ["types", "basics"]
+    },
+    {
+      "id": "py-10",
+      "type": "single",
+      "text": "Що таке 'PEP 8'?",
+      "options": [
+        "Бібліотека для тестів",
+        "Стандарт стилю коду для Python",
+        "Компілятор Python",
+        "Фреймворк для вебу"
+      ],
+      "correct": 1,
+      "topics": ["basics"]
+    },
+    {
+      "id": "py-11",
+      "type": "single",
+      "text": "Який результат?",
+      "code": "print(\"a\" in {\"a\": 1, \"b\": 2})",
+      "options": ["true", "false", "True", "False"],
+      "correct": 2,
+      "topics": ["basics", "types"],
+      "hint": "Оператор in для dict перевіряє ключі."
+    },
+    {
+      "id": "py-12",
+      "type": "single",
+      "text": "Яке найкраще визначення ООП-класу?",
+      "options": [
+        "Функція, яка повертає список",
+        "Шаблон (blueprint) для створення об’єктів",
+        "Модуль для імпорту",
+        "Спосіб зробити код швидшим"
+      ],
+      "correct": 1,
+      "topics": ["oop"]
+    }
+  ]
+}
