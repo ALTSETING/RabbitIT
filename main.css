@@ -33,6 +33,10 @@ body {
   text-align: center;
 }
 
+em {
+  font-style: normal;
+}
+
 button,
 input,
 a {
@@ -133,9 +137,9 @@ a {
 }
 
 .brand {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.55rem;
-  font-style: italic;
+  font-style: normal;
   font-weight: 700;
   letter-spacing: -0.03em;
   color: var(--text);
@@ -192,9 +196,9 @@ a {
 }
 
 .page-transition span {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Inter', sans-serif;
   font-size: clamp(2rem, 5vw, 5rem);
-  font-style: italic;
+  font-style: normal;
   opacity: 0;
   transform: translateY(10px);
   transition: 0.25s ease 0.12s;
@@ -284,7 +288,7 @@ a {
   border: 1px solid rgba(201,169,110,0.3);
   border-radius: 999px;
   color: #d8ccb6;
-  font-family: 'DM Mono', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 0.68rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -442,7 +446,7 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-family: 'DM Mono', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 0.14em;
@@ -452,7 +456,7 @@ a {
 }
 
 h1 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Inter', sans-serif;
   font-size: clamp(3.7rem, 7vw, 6.8rem);
   line-height: 0.87;
   margin: 0 0 24px;
@@ -474,9 +478,9 @@ h1 {
 }
 
 .sentence + .sentence {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.08em;
-  font-style: italic;
+  font-style: normal;
 }
 
 .hero-actions {
@@ -504,15 +508,15 @@ h1 {
 
 .hero-stats strong {
   display: block;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Inter', sans-serif;
   font-size: 2rem;
-  font-style: italic;
+  font-style: normal;
   margin-bottom: 6px;
 }
 
 .hero-stats span,
 .stats-card span {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Inter', sans-serif;
   color: var(--muted);
   font-size: 0.68rem;
   letter-spacing: 0.08em;
@@ -533,7 +537,7 @@ h1 {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  font-family: 'DM Mono', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 0.7rem;
 }
 
@@ -546,7 +550,7 @@ h1 {
 }
 
 .advantages .section-header h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 600;
 }
 
@@ -613,7 +617,7 @@ h1 {
   display: block;
   margin-bottom: 28px;
   color: #c8ff4d;
-  font-family: 'DM Mono', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 0.68rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -630,7 +634,7 @@ h1 {
 
 .catalog-header h1 em {
   color: #c8ff4d;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 600;
 }
 
@@ -654,7 +658,7 @@ h1 {
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 26px;
   background: #1b1b1b;
-  text-align: left;
+  text-align: center;
   transition: transform 0.35s ease, border-color 0.35s ease;
 }
 
@@ -691,12 +695,13 @@ h1 {
   display: flex;
   min-height: 365px;
   flex-direction: column;
+  align-items: center;
   padding: 28px;
 }
 
 .catalog-level {
   color: #c8ff4d;
-  font-family: 'DM Mono', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 0.66rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -708,13 +713,14 @@ h1 {
 
 .catalog-card h2 {
   margin: 14px 0 12px;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Inter', sans-serif;
   font-size: clamp(1.7rem, 2.6vw, 2.3rem);
   line-height: 1;
   letter-spacing: -0.04em;
 }
 
 .catalog-card-body > p {
+  max-width: 310px;
   margin: 0 0 26px;
   color: rgba(248, 244, 235, 0.58);
   font-size: 0.88rem;
@@ -727,6 +733,8 @@ h1 {
 
 .catalog-price {
   display: flex;
+  justify-content: center;
+  width: 100%;
   min-height: 66px;
   align-items: baseline;
   gap: 10px;
@@ -776,8 +784,8 @@ h1 {
 }
 
 .reviews .section-header h2 {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
   font-weight: 600;
 }
 
@@ -876,7 +884,7 @@ h1 {
 }
 
 .info-card h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.65rem;
   line-height: 1.08;
   margin: 0 0 12px;
@@ -897,7 +905,7 @@ h1 {
 
 .info-card:nth-child(3) h3 {
   font-size: 1.85rem;
-  font-style: italic;
+  font-style: normal;
 }
 
 .course-card {
@@ -936,7 +944,7 @@ h1 {
 
 .course-body h3 {
   margin: 0 0 12px;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.9rem;
   letter-spacing: -0.03em;
 }
@@ -961,7 +969,7 @@ h1 {
 .price {
   font-weight: 700;
   color: var(--text);
-  font-family: 'Playfair Display', serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.25rem;
 }
 
@@ -997,19 +1005,19 @@ h1 {
   place-items: center;
   background: rgba(201, 169, 110, 0.14);
   font-weight: 700;
-  margin-bottom: 18px;
+  margin: 0 auto 18px;
 }
 
 .review-name {
   font-weight: 700;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.35rem;
 }
 
 .review-role {
   color: var(--muted);
   margin-bottom: 18px;
-  font-family: 'DM Mono', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 0.68rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -1018,9 +1026,9 @@ h1 {
 .review-text {
   line-height: 1.9;
   color: var(--text);
-  font-family: 'Playfair Display', serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.15rem;
-  font-style: italic;
+  font-style: normal;
 }
 
 .about-top {
@@ -1063,9 +1071,9 @@ h1 {
 
 .stats-card strong {
   display: block;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Inter', sans-serif;
   font-size: 3rem;
-  font-style: italic;
+  font-style: normal;
   color: var(--gold);
   margin-bottom: 10px;
 }
@@ -1197,7 +1205,11 @@ h1 {
     font-size: clamp(2.75rem, 14vw, 4.3rem);
   }
   .catalog-card img {
-    height: 240px;
+    height: 280px;
+  }
+  .catalog-card:first-child img {
+    height: 320px;
+    object-position: center top;
   }
 }
 
