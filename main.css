@@ -997,6 +997,10 @@ h1 {
   scroll-snap-align: start;
 }
 
+.review-card-mobile-only {
+  display: none;
+}
+
 .review-avatar {
   width: 54px;
   height: 54px;
@@ -1034,6 +1038,12 @@ h1 {
 .about-top {
   display: grid;
   gap: 26px;
+  margin-bottom: 40px;
+}
+
+.about-top p {
+  margin-inline: auto;
+  text-align: center;
 }
 
 .about-list {
@@ -1074,7 +1084,7 @@ h1 {
   font-family: 'Inter', sans-serif;
   font-size: 3rem;
   font-style: normal;
-  color: var(--gold);
+  color: #2f2f2fde;
   margin-bottom: 10px;
 }
 
@@ -1154,6 +1164,10 @@ h1 {
 }
 
 @media (max-width: 680px) {
+  .review-card-mobile-only {
+    display: block;
+  }
+
   h1 {
     font-size: 2.8rem;
   }
