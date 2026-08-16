@@ -294,65 +294,21 @@ a {
 @keyframes statusPulse { 50% { opacity: 0.35; } }
 
 .partnership-page {
-  isolation: isolate;
   min-height: min(760px, 76vh);
-  border-color: rgba(225, 196, 140, 0.22);
-  background:
-    radial-gradient(circle at 16% 18%, rgba(225, 190, 120, 0.2), transparent 25%),
-    radial-gradient(circle at 84% 82%, rgba(110, 151, 127, 0.18), transparent 30%),
-    linear-gradient(145deg, #173e35 0%, #0d2924 52%, #081d1a 100%);
-  box-shadow: 0 36px 90px rgba(8, 29, 26, 0.24);
-}
-
-.partnership-page::before,
-.partnership-page::after {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-.partnership-page::before {
-  width: min(60vw, 620px);
-  aspect-ratio: 1;
-  top: 50%;
-  left: 50%;
-  border: 1px solid rgba(244, 222, 178, 0.16);
-  box-shadow:
-    0 0 0 70px rgba(244, 222, 178, 0.035),
-    0 0 0 140px rgba(244, 222, 178, 0.025);
-  transform: translate(-50%, -50%);
-}
-
-.partnership-page::after {
-  width: 280px;
-  height: 280px;
-  right: -90px;
-  top: -100px;
-  background: rgba(222, 184, 112, 0.14);
-  filter: blur(2px);
+  border: 0;
+  border-radius: 0;
+  background: #fff;
+  box-shadow: none;
 }
 
 .partnership-copy {
-  position: relative;
-  z-index: 1;
   width: min(880px, 100%);
   padding-block: 32px;
 }
 
-.partnership-copy::before {
-  content: '✦';
-  display: block;
-  margin-bottom: clamp(28px, 5vw, 54px);
-  color: #dfbd7c;
-  font-size: 1rem;
-  text-shadow: 0 0 24px rgba(223, 189, 124, 0.65);
-}
-
 .partnership-copy h1 {
   margin: 0;
-  color: #fbf5e9;
+  color: #111;
   font-size: clamp(4rem, 9.5vw, 8.6rem);
   line-height: 0.84;
   letter-spacing: -0.065em;
@@ -361,18 +317,17 @@ a {
 
 .partnership-copy h1 em {
   display: block;
-  color: #dfbd7c;
+  color: #111;
   font-weight: 600;
 }
 
 .partnership-copy p {
   max-width: 720px;
   margin: clamp(34px, 5vw, 58px) auto 0;
-  color: rgba(247, 239, 223, 0.76);
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(1.08rem, 1.8vw, 1.35rem);
-  line-height: 1.9;
-  letter-spacing: 0.01em;
+  color: #292929;
+  font-size: clamp(1.05rem, 1.7vw, 1.25rem);
+  line-height: 1.8;
+  letter-spacing: -0.01em;
   text-wrap: pretty;
 }
 
