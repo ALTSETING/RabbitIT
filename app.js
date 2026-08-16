@@ -95,6 +95,9 @@ viewButtons.forEach((button) => {
   button.addEventListener('click', () => activateView(button.dataset.viewTarget));
 });
 
+document.querySelector('[data-catalog-link]').addEventListener('click', () => activateView('courses'));
+document.querySelector('[data-catalog-back]').addEventListener('click', () => activateView('home', '#courses'));
+
 document.querySelector('[data-home-link]').addEventListener('click', (event) => {
   event.preventDefault();
   activateView('home', '#hero');
