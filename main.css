@@ -555,6 +555,226 @@ h1 {
   font-weight: 900;
 }
 
+.courses-intro {
+  margin: 22px auto 0;
+}
+
+.courses-catalog-button {
+  margin-top: 30px;
+  border: 0;
+}
+
+.courses-catalog-button span {
+  font-size: 1.15rem;
+  transition: transform 0.25s ease;
+}
+
+.courses-catalog-button:hover span {
+  transform: translateX(4px);
+}
+
+.course-catalog {
+  margin-top: 16px;
+  padding: clamp(34px, 6vw, 72px);
+  border-radius: 40px;
+  overflow: hidden;
+  background: #111;
+  color: #f8f4eb;
+}
+
+.catalog-header {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto clamp(48px, 7vw, 80px);
+}
+
+.catalog-back {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: rgba(248, 244, 235, 0.58);
+  cursor: pointer;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.catalog-back:hover {
+  color: #fff;
+  transform: translateX(-4px);
+}
+
+.catalog-kicker {
+  display: block;
+  margin-bottom: 28px;
+  color: #c8ff4d;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.catalog-header h1 {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(3rem, 7.5vw, 7rem);
+  font-weight: 900;
+  line-height: 0.88;
+  letter-spacing: -0.075em;
+}
+
+.catalog-header h1 em {
+  color: #c8ff4d;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+}
+
+.catalog-header > p {
+  max-width: 610px;
+  margin: 30px auto 0;
+  color: rgba(248, 244, 235, 0.62);
+  font-size: clamp(0.98rem, 1.5vw, 1.12rem);
+  line-height: 1.75;
+}
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  align-items: stretch;
+}
+
+.catalog-card {
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 26px;
+  background: #1b1b1b;
+  text-align: left;
+  transition: transform 0.35s ease, border-color 0.35s ease;
+}
+
+.catalog-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(200, 255, 77, 0.5);
+}
+
+.catalog-card-featured {
+  background: #f4f0e7;
+  color: #111;
+  transform: translateY(-18px);
+}
+
+.catalog-card-featured:hover {
+  transform: translateY(-26px);
+}
+
+.catalog-card img {
+  width: 100%;
+  height: 245px;
+  display: block;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: filter 0.4s ease, transform 0.5s ease;
+}
+
+.catalog-card:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.025);
+}
+
+.catalog-card-body {
+  display: flex;
+  min-height: 365px;
+  flex-direction: column;
+  padding: 28px;
+}
+
+.catalog-level {
+  color: #c8ff4d;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.catalog-card-featured .catalog-level {
+  color: #557500;
+}
+
+.catalog-card h2 {
+  margin: 14px 0 12px;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.7rem, 2.6vw, 2.3rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.catalog-card-body > p {
+  margin: 0 0 26px;
+  color: rgba(248, 244, 235, 0.58);
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+.catalog-card-featured .catalog-card-body > p {
+  color: #68645c;
+}
+
+.catalog-price {
+  display: flex;
+  min-height: 66px;
+  align-items: baseline;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.catalog-price strong {
+  font-size: 2.35rem;
+  letter-spacing: -0.06em;
+}
+
+.catalog-price del {
+  color: #ff5a5f;
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-decoration-color: #ff3038;
+  text-decoration-thickness: 3px;
+}
+
+.catalog-price span {
+  color: rgba(248, 244, 235, 0.42);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.catalog-card-button {
+  width: 100%;
+  padding: 13px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.catalog-card-button:hover,
+.catalog-card-featured .catalog-card-button {
+  border-color: #c8ff4d;
+  background: #c8ff4d;
+  color: #111;
+}
+
 .reviews .section-header h2 {
   font-family: 'Playfair Display', serif;
   font-style: italic;
@@ -909,6 +1129,16 @@ h1 {
   .review-slider {
     grid-template-columns: 1fr;
   }
+  .catalog-grid {
+    grid-template-columns: 1fr;
+  }
+  .catalog-card-featured,
+  .catalog-card-featured:hover {
+    transform: none;
+  }
+  .catalog-card img {
+    height: min(360px, 48vw);
+  }
   .site-header {
     flex-direction: column;
     align-items: center;
@@ -955,6 +1185,19 @@ h1 {
   }
   .partnership-copy p {
     line-height: 1.75;
+  }
+  .course-catalog {
+    padding: 32px 18px 24px;
+    border-radius: 28px;
+  }
+  .catalog-header {
+    padding-top: 42px;
+  }
+  .catalog-header h1 {
+    font-size: clamp(2.75rem, 14vw, 4.3rem);
+  }
+  .catalog-card img {
+    height: 240px;
   }
 }
 
