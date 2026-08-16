@@ -96,61 +96,9 @@
       <section class="section courses" id="courses">
         <div class="section-header reveal">
           <span class="section-label">Наші курси</span>
-          <h2>Оберіть програму, яка відповідає вашому рівню та цілям.</h2>
-        </div>
-        <div class="carousel" data-carousel aria-label="Наші курси">
-          <button class="carousel-button carousel-button-prev" type="button" aria-label="Попередній курс">←</button>
-          <div class="course-grid carousel-track">
-          <article class="course-card reveal delay-1">
-            <div class="course-media"></div>
-            <div class="course-body">
-              <div class="course-meta">
-                <span class="stars">★★★★☆</span>
-                <span class="rating">4.8</span>
-              </div>
-              <h3>Sales Foundation</h3>
-              <p><span class="sentence">Базовий курс для новачків.</span> <span class="sentence">Психологія покупця, етапи продажу, робота з запереченнями.</span></p>
-              <div class="course-footer">
-                <span class="price">12 500 ₴</span>
-                <span class="learners">1 240 уч.</span>
-              </div>
-              <a class="button button-ghost small" href="#">Детальніше</a>
-            </div>
-          </article>
-          <article class="course-card reveal delay-2">
-            <div class="course-media"></div>
-            <div class="course-body">
-              <div class="course-meta">
-                <span class="stars">★★★★★</span>
-                <span class="rating">4.9</span>
-              </div>
-              <h3>Sales Pro</h3>
-              <p>Просунуті техніки, B2B продажі, складні переговори, побудова відділу продажів.</p>
-              <div class="course-footer">
-                <span class="price">24 900 ₴</span>
-                <span class="learners">860 уч.</span>
-              </div>
-              <a class="button button-ghost small" href="#">Детальніше</a>
-            </div>
-          </article>
-          <article class="course-card reveal delay-3">
-            <div class="course-media"></div>
-            <div class="course-body">
-              <div class="course-meta">
-                <span class="stars">★★★★★</span>
-                <span class="rating">5.0</span>
-              </div>
-              <h3>Sales Leadership</h3>
-              <p><span class="sentence">Для керівників.</span> <span class="sentence">Стратегія, управління командою, масштабування результатів.</span></p>
-              <div class="course-footer">
-                <span class="price">39 900 ₴</span>
-                <span class="learners">420 уч.</span>
-              </div>
-              <a class="button button-ghost small" href="#">Детальніше</a>
-            </div>
-          </article>
-          </div>
-          <button class="carousel-button carousel-button-next" type="button" aria-label="Наступний курс">→</button>
+          <h2>Три програми. Один наступний рівень у продажах.</h2>
+          <p class="courses-intro">Перейдіть до каталогу, порівняйте формати та оберіть навчання, яке приведе вас до потрібного результату.</p>
+          <button class="button button-primary courses-catalog-button" type="button" data-catalog-link>Переглянути всі курси <span aria-hidden="true">→</span></button>
         </div>
       </section>
 
@@ -231,6 +179,52 @@
         <div class="partnership-copy">
           <h1>Зростаємо <em>разом</em></h1>
           <p>Справжнє зростання починається там, де знання зустрічаються з дією. Ми стаємо вашим партнером на цьому шляху — уважно слухаємо, глибоко занурюємося у ваші цілі та допомагаємо перетворити потенціал на впевнений, вимірюваний результат.</p>
+        </div>
+      </section>
+    </main>
+
+    <main class="view immersive-view" data-view="courses" hidden>
+      <section class="course-catalog">
+        <div class="catalog-header">
+          <button class="catalog-back" type="button" data-catalog-back aria-label="Повернутися на головну">← Назад</button>
+          <span class="catalog-kicker">Sales Mastery Programs</span>
+          <h1>Оберіть свій<br /><em>рівень майстерності</em></h1>
+          <p>Від першої впевненої розмови до управління командою, яка стабільно перевершує план.</p>
+        </div>
+
+        <div class="catalog-grid">
+          <article class="catalog-card">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Професійний бізнес-ментор" loading="lazy" referrerpolicy="no-referrer" />
+            <div class="catalog-card-body">
+              <span class="catalog-level">01 · Старт</span>
+              <h2>Sales Foundation</h2>
+              <p>Психологія клієнта, структура розмови та впевнена робота із запереченнями.</p>
+              <div class="catalog-price"><del>$250</del><strong>$35</strong><span>спеціальна ціна</span></div>
+              <button class="catalog-card-button" type="button">Обрати курс</button>
+            </div>
+          </article>
+
+          <article class="catalog-card catalog-card-featured">
+            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Команда професіоналів на бізнес-зустрічі" loading="lazy" referrerpolicy="no-referrer" />
+            <div class="catalog-card-body">
+              <span class="catalog-level">02 · Профі</span>
+              <h2>Sales Pro</h2>
+              <p>B2B-продажі, складні переговори та системні техніки для великих угод.</p>
+              <div class="catalog-price"><strong>$500</strong></div>
+              <button class="catalog-card-button" type="button">Обрати курс</button>
+            </div>
+          </article>
+
+          <article class="catalog-card">
+            <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Сильна команда сучасних керівників" loading="lazy" referrerpolicy="no-referrer" />
+            <div class="catalog-card-body">
+              <span class="catalog-level">03 · Лідерство</span>
+              <h2>Sales Leadership</h2>
+              <p>Стратегія, управління людьми та масштабування результатів відділу продажів.</p>
+              <div class="catalog-price"><strong>$750</strong></div>
+              <button class="catalog-card-button" type="button">Обрати курс</button>
+            </div>
+          </article>
         </div>
       </section>
     </main>
