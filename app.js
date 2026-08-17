@@ -1,377 +1,318 @@
-<!DOCTYPE html>
-<html lang="uk">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sales Mastery | Онлайн-школа продажів</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="main.css" />
-</head>
-<body>
-  <div class="page-shell">
-    <header class="site-header">
-      <a class="brand" href="#hero" data-home-link>Sales Mastery</a>
-      <div class="view-switcher" role="navigation" aria-label="Розділи Sales Mastery">
-        <span class="view-switcher-glow" aria-hidden="true"></span>
-        <button class="view-button" type="button" data-view-target="ai" aria-label="ШІ-ментор" title="ШІ-ментор">
-          <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M11 25v-3.2a9 9 0 1 1 10.8-1.3L25 24v3H14"/><path d="M11 12.5h10M13.5 9.5v6M18.5 9.5v6M11 18h8"/><circle cx="8.5" cy="12.5" r="1.5"/></svg>
-        </button>
-        <button class="view-button is-active" type="button" data-view-target="home" aria-label="Головна" aria-current="page" title="Головна">
-          <svg viewBox="0 0 32 32" aria-hidden="true"><path d="m6 15 10-9 10 9v11H6Z"/><path d="M12.5 26v-7h7v7"/></svg>
-        </button>
-        <button class="view-button" type="button" data-view-target="partnership" aria-label="Переваги співпраці" title="Переваги співпраці">
-          <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 16h19M19 9l7 7-7 7"/><circle cx="8" cy="16" r="4"/></svg>
-        </button>
-      </div>
-      <nav class="nav-links">
-        <a href="#advantages">Переваги</a>
-        <a href="#courses">Курси</a>
-        <a href="#reviews">Відгуки</a>
-        <a href="#about">Про школу</a>
-      </nav>
-    </header>
+const revealElements = document.querySelectorAll('.reveal');
+const counters = document.querySelectorAll('.counter');
+const hero = document.querySelector('.hero');
 
-    <main class="view is-active" data-view="home">
-      <section class="hero" id="hero">
-        <div class="hero-bg">
-          <span class="shape shape-circle"></span>
-          <span class="shape shape-ring"></span>
-          <span class="shape shape-blob"></span>
-        </div>
-        <div class="hero-content reveal">
-          <p class="eyebrow">✨ Онлайн-школа продажів №1</p>
-          <h1>Мистецтво продажів<br />починається тут</h1>
-          <p class="hero-copy"><span class="sentence">Опануйте навички, які приносять результат.</span> <span class="sentence">Курси від практиків із досвідом у провідних компаніях світу.</span></p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#courses">Обрати курс</a>
-            <a class="button button-secondary" href="#about">Дізнатися більше</a>
-          </div>
-          <div class="hero-stats">
-            <div>
-              <strong>5 000+</strong>
-              <span>Випускників</span>
-            </div>
-            <div>
-              <strong>200+</strong>
-              <span>Компаній-партнерів</span>
-            </div>
-            <div>
-              <strong>4.9</strong>
-              <span>Середній рейтинг</span>
-            </div>
-          </div>
-        </div>
-      </section>
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  },
+  { threshold: 0.15 }
+);
 
-      <section class="section advantages" id="advantages">
-        <div class="section-header reveal">
-          <span class="section-label">Чому обирають нас</span>
-          <h2>Ми створили середовище, де теорія зустрічається з практикою, а студенти стають професіоналами.</h2>
-        </div>
-        <div class="carousel" data-carousel aria-label="Переваги школи">
-          <button class="carousel-button carousel-button-prev" type="button" aria-label="Попередня перевага">←</button>
-          <div class="card-grid carousel-track">
-          <article class="info-card reveal delay-1">
-            <div class="icon">🏅</div>
-            <h3>Міжнародна сертифікація</h3>
-            <p><span class="sentence">Отримайте сертифікат, визнаний у 40+ країнах світу.</span> <span class="sentence">Ваш пропуск у світ професійних продажів.</span></p>
-          </article>
-          <article class="info-card reveal delay-2">
-            <div class="icon">🤝</div>
-            <h3>Практика з реальними кейсами</h3>
-            <p><span class="sentence">80% навчання — практика.</span> <span class="sentence">Розбори реальних угод, рольові ігри та симуляції переговорів.</span></p>
-          </article>
-          <article class="info-card reveal delay-3">
-            <div class="icon">🎧</div>
-            <h3>Персональна підтримка</h3>
-            <p><span class="sentence">Кожен студент отримує ментора.</span> <span class="sentence">Щотижневі Q&amp;A сесії та перевірка домашніх завдань.</span></p>
-          </article>
-          </div>
-          <button class="carousel-button carousel-button-next" type="button" aria-label="Наступна перевага">→</button>
-        </div>
-      </section>
+revealElements.forEach((el) => observer.observe(el));
 
-      <section class="section courses" id="courses">
-        <div class="section-header reveal">
-          <span class="section-label">Наші курси</span>
-          <h2>Три програми. Один наступний рівень у продажах.</h2>
-          <p class="courses-intro">Перейдіть до каталогу, порівняйте формати та оберіть навчання, яке приведе вас до потрібного результату.</p>
-          <button class="button button-primary courses-catalog-button" type="button" data-catalog-link>Переглянути всі курси <span aria-hidden="true">→</span></button>
-        </div>
-      </section>
+const animateCounter = (el) => {
+  const target = Number(el.dataset.target);
+  const duration = 1800;
+  let start = 0;
+  const stepTime = Math.max(Math.floor(duration / target), 20);
 
-      <section class="section learning-more" id="learning-more">
-        <div class="learning-more-header reveal">
-          <div>
-            <span class="section-label">Як проходить навчання</span>
-            <h2>Більше про<br /><em>навчання</em></h2>
-          </div>
-          <p>Від першого практичного кроку до підтвердженого результату — кожен етап допомагає перетворити знання на навички.</p>
-        </div>
+  const update = () => {
+    start += Math.ceil(target / (duration / stepTime));
+    if (start >= target) {
+      el.textContent = target + (target >= 100 ? '+' : '');
+    } else {
+      el.textContent = start;
+      window.requestAnimationFrame(update);
+    }
+  };
 
-        <div class="learning-more-grid">
-          <article class="learning-detail-card reveal">
-            <div class="learning-card-top">
-              <span class="learning-number">01</span>
-              <span class="learning-tag">Реальна платформа</span>
-            </div>
-            <div class="learning-icon learning-icon-practice" aria-hidden="true">
-              <span></span><span></span><span></span>
-            </div>
-            <h3>Практика на реальному прикладі</h3>
-            <p>Практична частина курсу проходитиме з використанням екосистеми Amway. Учасники ознайомляться з її основними можливостями та крок за кроком пройдуть процес створення й налаштування акаунту продавця.</p>
-            <p>Це допоможе закріпити отримані знання та набути практичних навичок роботи з реальною платформою.</p>
-          </article>
+  update();
+};
 
-          <article class="learning-detail-card learning-certificate-card reveal delay-1">
-            <div class="learning-card-top">
-              <span class="learning-number">02</span>
-              <span class="learning-tag">Підтвердження результату</span>
-            </div>
-            <div class="learning-icon learning-icon-certificate" aria-hidden="true">
-              <span>SM</span>
-            </div>
-            <h3>Сертифікат про завершення курсу</h3>
-            <p>Після завершення навчання кожен учасник отримає сертифікат, який підтверджує проходження курсу та опанування передбачених програмою знань і практичних навичок.</p>
-            <div class="learning-result"><span aria-hidden="true">✓</span> Ваш результат підтверджено</div>
-          </article>
-        </div>
-      </section>
+const counterObserver = new IntersectionObserver(
+  (entries, observerInstance) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        observerInstance.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.35 }
+);
 
-      <section class="section reviews" id="reviews">
-        <div class="section-header reveal">
-          <span class="section-label">Що кажуть випускники</span>
-          <h2>Реальні історії людей, які змінили свою кар'єру завдяки нашим курсам.</h2>
-        </div>
-        <div class="review-slider reveal">
-          <article class="review-card">
-            <div class="review-avatar">ДC</div>
-            <div class="review-name">Дмитро Савченко</div>
-            <div class="review-role">Account Executive, Grammarly</div>
-            <div class="review-text">До Sales Foundation мені бракувало системності та впевненості. На курсі я структурував знання й навчився презентувати свій досвід через конкретні результати. Після навчання успішно пройшов співбесіду та отримав офер від міжнародної компанії.</div>
-          </article>
-          <article class="review-card">
-            <div class="review-avatar">КС</div>
-            <div class="review-name">Катерина Січкар</div>
-            <div class="review-role">Sales Manager</div>
-            <div class="review-text">Після курсу Sales Pro я підвищила середній чек та почала вести більш впевнені переговори з клієнтами.</div>
-          </article>
-          <article class="review-card">
-            <div class="review-avatar">ОП</div>
-            <div class="review-name">Олексій Петренко</div>
-            <div class="review-role">Team Lead</div>
-            <div class="review-text">Sales Leadership змінив мій підхід до команди та дозволив будувати процеси, які працюють самостійно.</div>
-          </article>
-          <article class="review-card review-card-mobile-only">
-            <div class="review-avatar">ОП</div>
-            <div class="review-name">Марина Коваль</div>
-            <div class="review-role">Business Development Manager</div>
-            <div class="review-text">До курсу я витрачала багато часу на клієнтів, але не завжди доводила розмови до угоди. Після навчання змінила підхід до першого контакту й почала краще визначати потреби клієнтів. Уже в перший місяць закрила дві нові угоди.</div>
-          </article>
-        </div>
-      </section>
+counters.forEach((counter) => counterObserver.observe(counter));
 
-      <section class="section about" id="about">
-        <div class="about-top reveal">
-          <span class="section-label">Про школу</span>
-          <h2><span class="sentence">Sales Mastery — це не просто курси.</span> <span class="sentence">Це спільнота професіоналів, об'єднаних прагненням до майстерності в продажах.</span></h2>
-          <p><span class="sentence">Наші викладачі — практики з досвідом у Google, Microsoft, SoftServe та інших провідних компаніях.</span> <span class="sentence">Ми вчимо того, що працює в реальному світі, а не в теорії.</span></p>
-          <ul class="about-list">
-            <li>Авторська методологія навчання</li>
-            <li>Онлайн-навчання</li>
-            <li>Практичні завдання з реальних бізнес-кейсів</li>
-            <li>Працевлаштування для найкращих випускників</li>
-          </ul>
-        </div>
-        <div class="stats-grid reveal delay-1">
-          <div class="stats-card">
-            <strong class="counter" data-target="5000">0</strong>
-            <span>Випускників</span>
-          </div>
-          <div class="stats-card">
-            <strong class="counter" data-target="200">0</strong>
-            <span>Компаній-партнерів</span>
-          </div>
-          <div class="stats-card">
-            <strong class="counter" data-target="95">0</strong>
-            <span>Задоволених студентів</span>
-          </div>
-          <div class="stats-card">
-            <strong>40+</strong>
-            <span>Країн присутності</span>
-          </div>
-        </div>
-      </section>
+const viewButtons = document.querySelectorAll('[data-view-target]');
+const views = document.querySelectorAll('[data-view]');
+const transitionLayer = document.querySelector('.page-transition');
+let activeView = 'home';
+let viewIsChanging = false;
 
-    </main>
+const activateView = (target, anchor = null) => {
+  if (viewIsChanging || (target === activeView && !anchor)) return;
+  viewIsChanging = true;
+  const currentView = document.querySelector(`[data-view="${activeView}"]`);
+  const nextView = document.querySelector(`[data-view="${target}"]`);
 
-    <main class="view immersive-view" data-view="ai" hidden>
-      <section class="portal-page ai-page">
-        <div class="portal-orbit" aria-hidden="true"><span></span><span></span><span></span></div>
-        <div class="portal-copy">
-          <span class="section-label">Sales Intelligence</span>
-          <h1>Ваш ШІ-ментор<br />завжди поруч</h1>
-          <p>Аналізує переговори, допомагає підготуватися до зустрічі та підказує наступний найкращий крок.</p>
-          <div class="ai-status"><span></span> Система готова до діалогу</div>
-        </div>
-      </section>
-    </main>
+  currentView.classList.add('is-leaving');
+  transitionLayer.classList.remove('is-revealing');
+  transitionLayer.classList.add('is-active');
+  if ('vibrate' in navigator) navigator.vibrate([18, 35, 18]);
 
-    <main class="view immersive-view" data-view="partnership" hidden>
-      <section class="portal-page partnership-page">
-        <div class="partnership-hero">
-          <div class="partnership-copy">
-            <span class="partnership-eyebrow">Sales Mastery · Простір розвитку</span>
-            <h1>Зростаємо <em>разом</em></h1>
-            <p>Справжнє зростання починається там, де знання зустрічаються з дією. Ми стаємо вашим партнером на цьому шляху — уважно слухаємо, глибоко занурюємося у ваші цілі та допомагаємо перетворити потенціал на впевнений, вимірюваний результат.</p>
-            <a class="partnership-scroll" href="#partnership-story">Дізнатися більше <span aria-hidden="true">↓</span></a>
-          </div>
-        </div>
+  window.setTimeout(() => {
+    currentView.hidden = true;
+    currentView.classList.remove('is-active', 'is-leaving');
+    nextView.hidden = false;
+    nextView.classList.add('is-active', 'is-entering');
+    activeView = target;
 
-        <div class="partnership-story" id="partnership-story">
-          <article class="story-row">
-            <figure class="story-visual reveal">
-              <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&amp;fit=crop&amp;w=1600&amp;q=85" alt="Практичне заняття з викладачем у навчальній аудиторії" loading="lazy" referrerpolicy="no-referrer" />
-              <figcaption><span>01</span> Знання переходять у дію</figcaption>
-            </figure>
-            <div class="story-copy reveal delay-1">
-              <span class="story-label">Початок шляху</span>
-              <h2>Тут починається більше, ніж навчання</h2>
-              <p>Ми створили простір, де знання переходять у практику, а перші кроки — у впевнені результати.</p>
-              <p>Тут навчаються, пробують, помиляються, ставлять запитання й рухаються вперед разом. Кожне заняття — це новий досвід, нові знайомства та навички, які залишаються з вами далеко за межами курсу.</p>
-            </div>
-          </article>
+    viewButtons.forEach((button) => {
+      const isActive = button.dataset.viewTarget === target;
+      button.classList.toggle('is-active', isActive);
+      if (isActive) button.setAttribute('aria-current', 'page');
+      else button.removeAttribute('aria-current');
+    });
 
-          <div class="story-mantra reveal" aria-label="Навчайтеся. Практикуйтеся. Розвивайтеся.">
-            <span>Навчайтеся.</span><span>Практикуйтеся.</span><span>Розвивайтеся.</span>
-          </div>
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    transitionLayer.classList.add('is-revealing');
 
-          <article class="story-row story-row-reverse">
-            <figure class="story-visual reveal delay-1">
-              <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&amp;fit=crop&amp;w=1600&amp;q=85" alt="Команда обговорює практичне завдання під час навчання" loading="lazy" referrerpolicy="no-referrer" />
-              <figcaption><span>02</span> Практика створює впевненість</figcaption>
-            </figure>
-            <div class="story-copy reveal">
-              <span class="story-label">Впевненість</span>
-              <h2>Від знань — до впевненості</h2>
-              <p>Ми віримо, що найкращий результат з’являється тоді, коли теорія зустрічається з реальною практикою. Саме тому навчання побудоване навколо взаємодії, живих прикладів та ситуацій, з якими ви можете зіткнутися у реальному житті.</p>
-              <p>А завершення курсу — це не фінальна точка. Це момент, коли ви можете озирнутися назад, побачити власний прогрес і сказати: «Я став кращим, ніж був учора».</p>
-            </div>
-          </article>
+    window.setTimeout(() => {
+      transitionLayer.classList.remove('is-active', 'is-revealing');
+      nextView.classList.remove('is-entering');
+      viewIsChanging = false;
+      if (anchor) document.querySelector(anchor)?.scrollIntoView({ behavior: 'smooth' });
+    }, 480);
+  }, 420);
+};
 
-          <article class="story-row story-result">
-            <figure class="story-visual reveal">
-              <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&amp;fit=crop&amp;w=1600&amp;q=85" alt="Учасники навчання разом працюють над фінальним результатом" loading="lazy" referrerpolicy="no-referrer" />
-              <figcaption><span>03</span> Досвід, що залишається</figcaption>
-            </figure>
-            <div class="story-copy reveal delay-1">
-              <span class="story-label">Ваш результат</span>
-              <h2>Результат, який залишається з вами</h2>
-              <p>Сертифікат підтверджує завершення навчання. Але справжня цінність — у знаннях, досвіді та впевненості, які ви забираєте із собою.</p>
-              <strong class="story-closing">Ваш наступний рівень починається тут.</strong>
-              <button class="story-cta" type="button" data-catalog-link>Обрати свій курс <span aria-hidden="true">→</span></button>
-            </div>
-          </article>
-        </div>
-      </section>
-    </main>
+viewButtons.forEach((button) => {
+  button.addEventListener('click', () => activateView(button.dataset.viewTarget));
+});
 
-    <main class="view immersive-view" data-view="courses" hidden>
-      <section class="course-catalog">
-        <div class="catalog-header">
-          <button class="catalog-back" type="button" data-catalog-back aria-label="Повернутися на головну">← Назад</button>
-          <span class="catalog-kicker">Sales Mastery Programs</span>
-          <h1>Оберіть свій<br /><em>рівень майстерності</em></h1>
-          <p>Від першої впевненої розмови до управління командою, яка стабільно перевершує план.</p>
-        </div>
+document.querySelectorAll('[data-catalog-link]').forEach((button) => {
+  button.addEventListener('click', () => activateView('courses'));
+});
+document.querySelector('[data-catalog-back]').addEventListener('click', () => activateView('home', '#courses'));
 
-        <div class="catalog-grid">
-          <article class="catalog-card">
-            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Професійний бізнес-ментор" loading="lazy" referrerpolicy="no-referrer" />
-            <div class="catalog-card-body">
-              <span class="catalog-level">01 · Старт</span>
-              <h2>Sales Foundation</h2>
-              <p>Психологія клієнта, структура розмови та впевнена робота із запереченнями.</p>
-              <div class="catalog-price"><del>$250</del><strong>$35</strong><span>спеціальна ціна</span></div>
-              <button class="catalog-card-button" type="button" data-checkout-open="foundation" data-payment-pln="" data-payment-uah="" data-payment-usd="">Обрати курс</button>
-            </div>
-          </article>
+const checkout = document.querySelector('[data-checkout]');
+const checkoutSheet = checkout?.querySelector('.checkout-sheet');
+const checkoutOpenButtons = [...document.querySelectorAll('[data-checkout-open]')];
+const checkoutPayButton = checkout?.querySelector('[data-checkout-pay]');
+const checkoutPayLabel = checkout?.querySelector('[data-checkout-pay-label]');
+const checkoutNote = checkout?.querySelector('[data-checkout-note]');
+const checkoutCourse = checkout?.querySelector('[data-checkout-course]');
+const currencyOptions = checkout ? [...checkout.querySelectorAll('[data-currency]')] : [];
+let lastCheckoutTrigger = null;
+let selectedCurrency = null;
 
-          <article class="catalog-card catalog-card-featured">
-            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Команда професіоналів на бізнес-зустрічі" loading="lazy" referrerpolicy="no-referrer" />
-            <div class="catalog-card-body">
-              <span class="catalog-level">02 · Профі</span>
-              <h2>Sales Pro</h2>
-              <p>B2B-продажі, складні переговори та системні техніки для великих угод.</p>
-              <div class="catalog-price"><strong>$500</strong></div>
-              <button class="catalog-card-button" type="button" data-checkout-open="pro" data-payment-pln="" data-payment-uah="" data-payment-usd="">Обрати курс</button>
-            </div>
-          </article>
+const checkoutCourses = {
+  foundation: {
+    name: 'Sales Foundation',
+    prices: {
+      PLN: { value: '130', display: '130 zł' },
+      UAH: { value: '1560', display: '1 560 грн' },
+      USD: { value: '35', display: '35 $' }
+    }
+  },
+  pro: {
+    name: 'Sales Pro',
+    prices: {
+      PLN: { value: '1800', display: '1 800 zł' },
+      UAH: { value: '22000', display: '22 000 грн' },
+      USD: { value: '500', display: '500 $' }
+    }
+  },
+  leadership: {
+    name: 'Sales Leadership',
+    prices: {
+      PLN: { value: '2700', display: '2 700 zł' },
+      UAH: { value: '33000', display: '33 000 грн' },
+      USD: { value: '750', display: '750 $' }
+    }
+  }
+};
 
-          <article class="catalog-card">
-            <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Сильна команда сучасних керівників" loading="lazy" referrerpolicy="no-referrer" />
-            <div class="catalog-card-body">
-              <span class="catalog-level">03 · Лідерство</span>
-              <h2>Sales Leadership</h2>
-              <p>Стратегія, управління людьми та масштабування результатів відділу продажів.</p>
-              <div class="catalog-price"><strong>$750</strong></div>
-              <button class="catalog-card-button" type="button" data-checkout-open="leadership" data-payment-pln="" data-payment-uah="" data-payment-usd="">Обрати курс</button>
-            </div>
-          </article>
-        </div>
-      </section>
-    </main>
+const closeCheckout = () => {
+  if (!checkout?.classList.contains('is-open')) return;
+  checkout.classList.remove('is-open');
+  checkout.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('checkout-open');
+  window.setTimeout(() => lastCheckoutTrigger?.focus(), 450);
+};
 
-    <div class="page-transition" aria-hidden="true"><span>Sales Mastery</span></div>
+const openCheckout = (trigger) => {
+  if (!checkout) return;
+  const course = checkoutCourses[trigger.dataset.checkoutOpen];
+  if (!course) return;
+  lastCheckoutTrigger = trigger;
+  selectedCurrency = null;
+  checkoutCourse.textContent = course.name;
+  currencyOptions.forEach((option) => {
+    const price = course.prices[option.dataset.currency];
+    option.dataset.price = price.value;
+    option.dataset.displayPrice = price.display;
+    option.dataset.paymentUrl = trigger.dataset[`payment${option.dataset.currency.toLowerCase()}`] || '';
+    option.classList.remove('is-selected');
+    option.setAttribute('aria-checked', 'false');
+    option.querySelector('strong').innerHTML = price.display.replace(/\s([^\s]+)$/, ' <em>$1</em>');
+  });
+  checkoutPayButton.disabled = true;
+  checkoutPayLabel.textContent = 'Оберіть валюту';
+  checkoutNote.classList.remove('is-error');
+  checkoutNote.textContent = 'Безпечна оплата · Доступ до курсу одразу після оплати';
+  checkout.classList.add('is-open');
+  checkout.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('checkout-open');
+  window.requestAnimationFrame(() => checkoutSheet?.querySelector('.checkout-close')?.focus());
+};
 
-    <footer class="site-footer">
-      <p>© 2026 Sales Mastery. Всі права захищені.</p>
-      <div class="footer-links">
-        <a href="#hero">Головна</a>
-        <a href="#courses">Курси</a>
-      </div>
-    </footer>
-  </div>
+checkoutOpenButtons.forEach((button) => {
+  button.addEventListener('click', () => openCheckout(button));
+});
+checkout?.querySelectorAll('[data-checkout-close]').forEach((button) => {
+  button.addEventListener('click', closeCheckout);
+});
 
-  <div class="checkout" data-checkout aria-hidden="true">
-    <button class="checkout-backdrop" type="button" data-checkout-close aria-label="Закрити вибір валюти"></button>
-    <section class="checkout-sheet" role="dialog" aria-modal="true" aria-labelledby="checkout-title">
-      <div class="checkout-handle" aria-hidden="true"></div>
-      <button class="checkout-close" type="button" data-checkout-close aria-label="Закрити">×</button>
+currencyOptions.forEach((option) => {
+  option.addEventListener('click', () => {
+    selectedCurrency = option;
+    currencyOptions.forEach((item) => {
+      const isSelected = item === option;
+      item.classList.toggle('is-selected', isSelected);
+      item.setAttribute('aria-checked', String(isSelected));
+    });
+    checkoutPayButton.disabled = false;
+    checkoutPayLabel.textContent = `Оплатити ${option.dataset.displayPrice}`;
+    checkoutNote.classList.remove('is-error');
+    checkoutNote.textContent = 'Безпечна оплата · Доступ до курсу одразу після оплати';
+    if ('vibrate' in navigator) navigator.vibrate(18);
+  });
+});
 
-      <div class="checkout-heading">
-        <span class="checkout-kicker" data-checkout-course>Sales Foundation</span>
-        <h2 id="checkout-title">Оберіть валюту оплати</h2>
-        <p>Вартість курсу вже зафіксована — без додаткових комісій з нашого боку.</p>
-      </div>
+checkoutPayButton?.addEventListener('click', () => {
+  if (!selectedCurrency) return;
+  const paymentUrl = selectedCurrency.dataset.paymentUrl;
+  if (paymentUrl) {
+    window.location.assign(paymentUrl);
+    return;
+  }
+  checkoutNote.classList.add('is-error');
+  checkoutNote.textContent = 'Додайте платіжне посилання для цієї валюти в data-payment-url.';
+});
 
-      <div class="currency-options" role="radiogroup" aria-label="Валюта оплати">
-        <button class="currency-option" type="button" role="radio" aria-checked="false" data-currency="PLN" data-price="130" data-display-price="130 zł" data-payment-url="">
-          <span class="currency-flag" aria-hidden="true">PL</span>
-          <span class="currency-copy"><small>Польські злоті</small><strong>130 <em>zł</em></strong></span>
-          <span class="currency-check" aria-hidden="true">✓</span>
-        </button>
-        <button class="currency-option" type="button" role="radio" aria-checked="false" data-currency="USD" data-price="35" data-display-price="35 $" data-payment-url="">
-          <span class="currency-flag" aria-hidden="true">US</span>
-          <span class="currency-copy"><small>Долари США</small><strong>35 <em>$</em></strong></span>
-          <span class="currency-check" aria-hidden="true">✓</span>
-        </button>
-        <button class="currency-option" type="button" role="radio" aria-checked="false" data-currency="UAH" data-price="1560" data-display-price="1 560 грн" data-payment-url="">
-          <span class="currency-flag" aria-hidden="true">UA</span>
-          <span class="currency-copy"><small>Українські гривні</small><strong>1 560 <em>грн</em></strong></span>
-          <span class="currency-check" aria-hidden="true">✓</span>
-        </button>
-      </div>
+document.addEventListener('keydown', (event) => {
+  if (!checkout?.classList.contains('is-open')) return;
+  if (event.key === 'Escape') closeCheckout();
+  if (event.key === 'Tab') {
+    const focusable = [...checkoutSheet.querySelectorAll('button:not(:disabled), a[href]')];
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  }
+});
 
-      <button class="checkout-pay" type="button" data-checkout-pay disabled>
-        <span data-checkout-pay-label>Оберіть валюту</span><span aria-hidden="true">→</span>
-      </button>
-      <p class="checkout-note" data-checkout-note>Безпечна оплата · Доступ до курсу одразу після оплати</p>
-    </section>
-  </div>
-  <script src="app.js"></script>
-</body>
-</html>
+document.querySelector('[data-home-link]').addEventListener('click', (event) => {
+  event.preventDefault();
+  activateView('home', '#hero');
+});
 
+document.querySelectorAll('.nav-links a').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    if (activeView === 'home') return;
+    event.preventDefault();
+    activateView('home', link.getAttribute('href'));
+  });
+});
+
+document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+  const track = carousel.querySelector('.carousel-track');
+  const previousButton = carousel.querySelector('.carousel-button-prev');
+  const nextButton = carousel.querySelector('.carousel-button-next');
+  const originalCards = [...track.children];
+  const cardCount = originalCards.length;
+  let currentIndex = cardCount;
+  let isMoving = false;
+  let touchStartX = 0;
+
+  const makeClone = (card) => {
+    const clone = card.cloneNode(true);
+    clone.classList.remove('reveal', 'delay-1', 'delay-2', 'delay-3');
+    clone.setAttribute('aria-hidden', 'true');
+    clone.querySelectorAll('a, button').forEach((element) => {
+      element.tabIndex = -1;
+    });
+    return clone;
+  };
+
+  [...originalCards].reverse().forEach((card) => track.prepend(makeClone(card)));
+  originalCards.forEach((card) => track.append(makeClone(card)));
+
+  const getStep = () => {
+    const card = track.querySelector('article');
+    const gap = parseFloat(window.getComputedStyle(track).gap) || 0;
+    return card.getBoundingClientRect().width + gap;
+  };
+
+  const setPosition = (animate = false) => {
+    track.classList.toggle('is-moving', animate);
+    track.style.transform = `translateX(${-currentIndex * getStep()}px)`;
+  };
+
+  const vibrate = () => {
+    if ('vibrate' in navigator) navigator.vibrate(25);
+  };
+
+  const move = (direction) => {
+    if (isMoving) return;
+    isMoving = true;
+    currentIndex += direction;
+    vibrate();
+    setPosition(true);
+  };
+
+  track.addEventListener('transitionend', () => {
+    if (currentIndex >= cardCount * 2) currentIndex = cardCount;
+    if (currentIndex < cardCount) currentIndex = cardCount * 2 - 1;
+    setPosition(false);
+    isMoving = false;
+  });
+
+  previousButton.addEventListener('click', () => move(-1));
+  nextButton.addEventListener('click', () => move(1));
+
+  track.addEventListener('touchstart', (event) => {
+    touchStartX = event.changedTouches[0].clientX;
+  }, { passive: true });
+
+  track.addEventListener('touchend', (event) => {
+    const distance = event.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(distance) > 40) move(distance > 0 ? -1 : 1);
+  }, { passive: true });
+
+  window.addEventListener('resize', () => setPosition(false));
+  setPosition(false);
+});
+
+window.addEventListener('mousemove', (event) => {
+  const { innerWidth, innerHeight } = window;
+  const ratioX = (event.clientX / innerWidth - 0.5) * 2;
+  const ratioY = (event.clientY / innerHeight - 0.5) * 2;
+  const shapes = document.querySelectorAll('.shape');
+
+  shapes.forEach((shape, index) => {
+    const speed = (index + 1) * 4;
+    shape.style.transform = `translate(${ratioX * speed}px, ${ratioY * speed}px)`;
+  });
+});
