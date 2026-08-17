@@ -316,4 +316,3 @@ window.addEventListener('mousemove', (event) => {
     shape.style.transform = `translate(${ratioX * speed}px, ${ratioY * speed}px)`;
   });
 });
-
