@@ -206,7 +206,7 @@
               <h2>Sales Foundation</h2>
               <p>Психологія клієнта, структура розмови та впевнена робота із запереченнями.</p>
               <div class="catalog-price"><del>$250</del><strong>$35</strong><span>спеціальна ціна</span></div>
-              <button class="catalog-card-button" type="button">Обрати курс</button>
+              <button class="catalog-card-button" type="button" data-checkout-open="foundation" data-payment-pln="" data-payment-uah="" data-payment-usd="">Обрати курс</button>
             </div>
           </article>
 
@@ -217,7 +217,7 @@
               <h2>Sales Pro</h2>
               <p>B2B-продажі, складні переговори та системні техніки для великих угод.</p>
               <div class="catalog-price"><strong>$500</strong></div>
-              <button class="catalog-card-button" type="button">Обрати курс</button>
+              <button class="catalog-card-button" type="button" data-checkout-open="pro" data-payment-pln="" data-payment-uah="" data-payment-usd="">Обрати курс</button>
             </div>
           </article>
 
@@ -228,7 +228,7 @@
               <h2>Sales Leadership</h2>
               <p>Стратегія, управління людьми та масштабування результатів відділу продажів.</p>
               <div class="catalog-price"><strong>$750</strong></div>
-              <button class="catalog-card-button" type="button">Обрати курс</button>
+              <button class="catalog-card-button" type="button" data-checkout-open="leadership" data-payment-pln="" data-payment-uah="" data-payment-usd="">Обрати курс</button>
             </div>
           </article>
         </div>
@@ -245,9 +245,43 @@
       </div>
     </footer>
   </div>
-  <script src="app.js"></script>
-</body>
-</html>
 
+  <div class="checkout" data-checkout aria-hidden="true">
+    <button class="checkout-backdrop" type="button" data-checkout-close aria-label="Закрити вибір валюти"></button>
+    <section class="checkout-sheet" role="dialog" aria-modal="true" aria-labelledby="checkout-title">
+      <div class="checkout-handle" aria-hidden="true"></div>
+      <button class="checkout-close" type="button" data-checkout-close aria-label="Закрити">×</button>
+
+      <div class="checkout-heading">
+        <span class="checkout-kicker" data-checkout-course>Sales Foundation</span>
+        <h2 id="checkout-title">Оберіть валюту оплати</h2>
+        <p>Вартість курсу вже зафіксована — без додаткових комісій з нашого боку.</p>
+      </div>
+
+      <div class="currency-options" role="radiogroup" aria-label="Валюта оплати">
+        <button class="currency-option" type="button" role="radio" aria-checked="false" data-currency="PLN" data-price="130" data-display-price="130 zł" data-payment-url="">
+          <span class="currency-flag" aria-hidden="true">PL</span>
+          <span class="currency-copy"><small>Польські злоті</small><strong>130 <em>zł</em></strong></span>
+          <span class="currency-check" aria-hidden="true">✓</span>
+        </button>
+        <button class="currency-option" type="button" role="radio" aria-checked="false" data-currency="USD" data-price="35" data-display-price="35 $" data-payment-url="">
+          <span class="currency-flag" aria-hidden="true">US</span>
+          <span class="currency-copy"><small>Долари США</small><strong>35 <em>$</em></strong></span>
+          <span class="currency-check" aria-hidden="true">✓</span>
+        </button>
+        <button class="currency-option" type="button" role="radio" aria-checked="false" data-currency="UAH" data-price="1560" data-display-price="1 560 грн" data-payment-url="">
+          <span class="currency-flag" aria-hidden="true">UA</span>
+          <span class="currency-copy"><small>Українські гривні</small><strong>1 560 <em>грн</em></strong></span>
+          <span class="currency-check" aria-hidden="true">✓</span>
+        </button>
+      </div>
+
+      <button class="checkout-pay" type="button" data-checkout-pay disabled>
+        <span data-checkout-pay-label>Оберіть валюту</span><span aria-hidden="true">→</span>
+      </button>
+      <p class="checkout-note" data-checkout-note>Безпечна оплата · Доступ до курсу одразу після оплати</p>
+    </section>
+  </div>
+  <script src="app.js"></script>
 </body>
 </html>
