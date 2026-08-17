@@ -98,6 +98,129 @@ viewButtons.forEach((button) => {
 document.querySelector('[data-catalog-link]').addEventListener('click', () => activateView('courses'));
 document.querySelector('[data-catalog-back]').addEventListener('click', () => activateView('home', '#courses'));
 
+const checkout = document.querySelector('[data-checkout]');
+const checkoutSheet = checkout?.querySelector('.checkout-sheet');
+const checkoutOpenButtons = [...document.querySelectorAll('[data-checkout-open]')];
+const checkoutPayButton = checkout?.querySelector('[data-checkout-pay]');
+const checkoutPayLabel = checkout?.querySelector('[data-checkout-pay-label]');
+const checkoutNote = checkout?.querySelector('[data-checkout-note]');
+const checkoutCourse = checkout?.querySelector('[data-checkout-course]');
+const currencyOptions = checkout ? [...checkout.querySelectorAll('[data-currency]')] : [];
+let lastCheckoutTrigger = null;
+let selectedCurrency = null;
+
+const checkoutCourses = {
+  foundation: {
+    name: 'Sales Foundation',
+    prices: {
+      PLN: { value: '130', display: '130 zł' },
+      UAH: { value: '1560', display: '1 560 грн' },
+      USD: { value: '35', display: '35 $' }
+    }
+  },
+  pro: {
+    name: 'Sales Pro',
+    prices: {
+      PLN: { value: '1800', display: '1 800 zł' },
+      UAH: { value: '22000', display: '22 000 грн' },
+      USD: { value: '500', display: '500 $' }
+    }
+  },
+  leadership: {
+    name: 'Sales Leadership',
+    prices: {
+      PLN: { value: '2700', display: '2 700 zł' },
+      UAH: { value: '33000', display: '33 000 грн' },
+      USD: { value: '750', display: '750 $' }
+    }
+  }
+};
+
+const closeCheckout = () => {
+  if (!checkout?.classList.contains('is-open')) return;
+  checkout.classList.remove('is-open');
+  checkout.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('checkout-open');
+  window.setTimeout(() => lastCheckoutTrigger?.focus(), 450);
+};
+
+const openCheckout = (trigger) => {
+  if (!checkout) return;
+  const course = checkoutCourses[trigger.dataset.checkoutOpen];
+  if (!course) return;
+  lastCheckoutTrigger = trigger;
+  selectedCurrency = null;
+  checkoutCourse.textContent = course.name;
+  currencyOptions.forEach((option) => {
+    const price = course.prices[option.dataset.currency];
+    option.dataset.price = price.value;
+    option.dataset.displayPrice = price.display;
+    option.dataset.paymentUrl = trigger.dataset[`payment${option.dataset.currency.toLowerCase()}`] || '';
+    option.classList.remove('is-selected');
+    option.setAttribute('aria-checked', 'false');
+    option.querySelector('strong').innerHTML = price.display.replace(/\s([^\s]+)$/, ' <em>$1</em>');
+  });
+  checkoutPayButton.disabled = true;
+  checkoutPayLabel.textContent = 'Оберіть валюту';
+  checkoutNote.classList.remove('is-error');
+  checkoutNote.textContent = 'Безпечна оплата · Доступ до курсу одразу після оплати';
+  checkout.classList.add('is-open');
+  checkout.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('checkout-open');
+  window.requestAnimationFrame(() => checkoutSheet?.querySelector('.checkout-close')?.focus());
+};
+
+checkoutOpenButtons.forEach((button) => {
+  button.addEventListener('click', () => openCheckout(button));
+});
+checkout?.querySelectorAll('[data-checkout-close]').forEach((button) => {
+  button.addEventListener('click', closeCheckout);
+});
+
+currencyOptions.forEach((option) => {
+  option.addEventListener('click', () => {
+    selectedCurrency = option;
+    currencyOptions.forEach((item) => {
+      const isSelected = item === option;
+      item.classList.toggle('is-selected', isSelected);
+      item.setAttribute('aria-checked', String(isSelected));
+    });
+    checkoutPayButton.disabled = false;
+    checkoutPayLabel.textContent = `Оплатити ${option.dataset.displayPrice}`;
+    checkoutNote.classList.remove('is-error');
+    checkoutNote.textContent = 'Безпечна оплата · Доступ до курсу одразу після оплати';
+    if ('vibrate' in navigator) navigator.vibrate(18);
+  });
+});
+
+checkoutPayButton?.addEventListener('click', () => {
+  if (!selectedCurrency) return;
+  const paymentUrl = selectedCurrency.dataset.paymentUrl;
+  if (paymentUrl) {
+    window.location.assign(paymentUrl);
+    return;
+  }
+  checkoutNote.classList.add('is-error');
+  checkoutNote.textContent = 'Додайте платіжне посилання для цієї валюти в data-payment-url.';
+});
+
+document.addEventListener('keydown', (event) => {
+  if (!checkout?.classList.contains('is-open')) return;
+  if (event.key === 'Escape') closeCheckout();
+  if (event.key === 'Tab') {
+    const focusable = [...checkoutSheet.querySelectorAll('button:not(:disabled), a[href]')];
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  }
+});
+
 document.querySelector('[data-home-link]').addEventListener('click', (event) => {
   event.preventDefault();
   activateView('home', '#hero');
@@ -191,3 +314,4 @@ window.addEventListener('mousemove', (event) => {
     shape.style.transform = `translate(${ratioX * speed}px, ${ratioY * speed}px)`;
   });
 });
+
