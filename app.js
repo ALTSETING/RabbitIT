@@ -95,7 +95,9 @@ viewButtons.forEach((button) => {
   button.addEventListener('click', () => activateView(button.dataset.viewTarget));
 });
 
-document.querySelector('[data-catalog-link]').addEventListener('click', () => activateView('courses'));
+document.querySelectorAll('[data-catalog-link]').forEach((button) => {
+  button.addEventListener('click', () => activateView('courses'));
+});
 document.querySelector('[data-catalog-back]').addEventListener('click', () => activateView('home', '#courses'));
 
 const checkout = document.querySelector('[data-checkout]');
