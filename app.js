@@ -112,19 +112,19 @@ let lastCheckoutTrigger = null;
 // A price button takes the visitor directly to its matching URL.
 const paymentUrls = {
   foundation: {
-    PLN: '',
-    UAH: '',
-    USD: ''
+    PLN: 'https://buy.stripe.com/bJe7sM1aM5TX2Ylgva33W08',
+    UAH: 'https://buy.stripe.com/28EbJ2cTucil2Yl7YE33W0b',
+    USD: 'https://buy.stripe.com/7sY7sMaLmdmpgPb1Ag33W05'
   },
   pro: {
-    PLN: '',
-    UAH: '',
-    USD: ''
+    PLN: 'https://buy.stripe.com/9B6aEY3iUdmpeH31Ag33W09',
+    UAH: 'https://buy.stripe.com/5kQ14odXydmpaqNfr633W0e',
+    USD: 'https://buy.stripe.com/9B63cwcTu3LPeH3baQ33W06'
   },
   leadership: {
-    PLN: '',
-    UAH: '',
-    USD: ''
+    PLN: 'https://buy.stripe.com/00w6oI3iUfux56t0wc33W0a',
+    UAH: 'https://buy.stripe.com/8x2eVe3iU969dCZbaQ33W0f',
+    USD: 'https://buy.stripe.com/9B63cw6v6gyBeH34Ms33W07'
   }
 };
 
