@@ -314,3 +314,76 @@ window.addEventListener('mousemove', (event) => {
     shape.style.transform = `translate(${ratioX * speed}px, ${ratioY * speed}px)`;
   });
 });
+
+const privacyModal = document.querySelector('[data-privacy-modal]');
+const privacyDialog = privacyModal?.querySelector('.privacy-dialog');
+const privacyAcceptButton = privacyModal?.querySelector('[data-privacy-accept]');
+const privacyConsentKey = 'rabbit-academy-privacy-v1';
+let lastPrivacyTrigger = null;
+
+const hasPrivacyConsent = () => {
+  try {
+    return window.localStorage.getItem(privacyConsentKey) === 'accepted';
+  } catch (error) {
+    return false;
+  }
+};
+
+const openPrivacyModal = (trigger = null) => {
+  if (!privacyModal) return;
+  lastPrivacyTrigger = trigger;
+  privacyModal.classList.add('is-open');
+  privacyModal.setAttribute('aria-hidden', 'false');
+  document.documentElement.classList.add('privacy-open');
+  document.body.classList.add('privacy-open');
+  window.requestAnimationFrame(() => privacyAcceptButton?.focus());
+};
+
+const closePrivacyModal = () => {
+  if (!privacyModal?.classList.contains('is-open')) return;
+  privacyModal.classList.remove('is-open');
+  privacyModal.setAttribute('aria-hidden', 'true');
+  document.documentElement.classList.remove('privacy-open');
+  document.body.classList.remove('privacy-open');
+  if (lastPrivacyTrigger) window.setTimeout(() => lastPrivacyTrigger.focus(), 300);
+};
+
+privacyAcceptButton?.addEventListener('click', () => {
+  try {
+    window.localStorage.setItem(privacyConsentKey, 'accepted');
+  } catch (error) {
+    // The window can still be closed when browser storage is unavailable.
+  }
+  closePrivacyModal();
+});
+
+document.querySelectorAll('[data-privacy-open]').forEach((button) => {
+  button.addEventListener('click', () => openPrivacyModal(button));
+});
+
+document.addEventListener('keydown', (event) => {
+  if (!privacyModal?.classList.contains('is-open')) return;
+
+  if (event.key === 'Escape' && hasPrivacyConsent()) {
+    closePrivacyModal();
+    return;
+  }
+
+  if (event.key === 'Tab') {
+    const focusable = [...privacyDialog.querySelectorAll('[tabindex="0"], button:not(:disabled), a[href]')];
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  }
+});
+
+if (!hasPrivacyConsent()) {
+  openPrivacyModal();
+}
+
