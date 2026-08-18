@@ -1382,11 +1382,6 @@ body.checkout-open {
   transform: translateY(-3px);
 }
 
-.currency-option.is-selected {
-  border-color: #c8ff4d;
-  background: #272b1f;
-}
-
 .currency-flag {
   display: grid;
   width: 34px;
@@ -1431,44 +1426,17 @@ body.checkout-open {
   border-radius: 50%;
   background: #c8ff4d;
   color: #111;
-  opacity: 0;
+  opacity: 0.58;
   font-size: 0.72rem;
   font-weight: 900;
-  transform: scale(0.5);
-  transition: opacity 0.25s ease, transform 0.25s ease;
-}
-
-.currency-option.is-selected .currency-check {
-  opacity: 1;
   transform: scale(1);
-}
-
-.checkout-pay {
-  display: flex;
-  width: 100%;
-  margin-top: 18px;
-  padding: 17px 24px;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  border: 0;
-  border-radius: 999px;
-  background: #c8ff4d;
-  color: #111;
-  cursor: pointer;
-  font: 800 0.76rem/1 'Inter', sans-serif;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-.checkout-pay:not(:disabled):hover {
-  transform: translateY(-2px);
-}
-
-.checkout-pay:disabled {
-  cursor: default;
-  opacity: 0.34;
+.currency-option:hover .currency-check,
+.currency-option:focus-visible .currency-check {
+  opacity: 1;
+  transform: translateX(3px);
 }
 
 .checkout-note {
@@ -2194,15 +2162,11 @@ body.checkout-open {
     right: 14px;
     width: 26px;
     height: 26px;
-    transform: translateY(-50%) scale(0.5);
+    transform: translateY(-50%);
   }
-  .currency-option.is-selected .currency-check {
-    transform: translateY(-50%) scale(1);
-  }
-  .checkout-pay {
-    min-height: 50px;
-    margin-top: 12px;
-    padding: 15px 18px;
+  .currency-option:hover .currency-check,
+  .currency-option:focus-visible .currency-check {
+    transform: translate(3px, -50%);
   }
   .checkout-note {
     margin-top: 10px;
@@ -2298,8 +2262,7 @@ body.checkout-open {
 
 @media (hover: none) and (pointer: coarse) {
   .catalog-card:hover img,
-  .currency-option:hover,
-  .checkout-pay:not(:disabled):hover {
+  .currency-option:hover {
     transform: none;
   }
 }
@@ -2320,5 +2283,3 @@ body.checkout-open {
     transition-duration: 0.01ms !important;
   }
 }
-
-
