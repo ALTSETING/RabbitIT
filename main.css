@@ -1758,6 +1758,7 @@ body.checkout-open {
 
 .site-footer {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   gap: 24px;
@@ -1771,6 +1772,34 @@ body.checkout-open {
   gap: 18px;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.footer-contact {
+  flex-basis: 100%;
+  width: 100%;
+  margin: 4px 0 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+  font-size: 0.86rem;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+.footer-contact a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  margin-left: 4px;
+  color: var(--text);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.footer-contact a:hover,
+.footer-contact a:focus-visible {
+  color: #987840;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 .footer-policy-link {
@@ -2210,6 +2239,9 @@ body.privacy-open {
     flex-direction: column;
     align-items: center;
   }
+  .footer-contact {
+    flex-basis: auto;
+  }
   .portal-page {
     min-height: 72vh;
     border-radius: 28px;
@@ -2553,4 +2585,5 @@ body.privacy-open {
     transition-duration: 0.01ms !important;
   }
 }
+
 
