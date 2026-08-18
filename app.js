@@ -386,4 +386,3 @@ document.addEventListener('keydown', (event) => {
 if (!hasPrivacyConsent()) {
   openPrivacyModal();
 }
-
