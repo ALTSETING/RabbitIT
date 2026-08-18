@@ -103,13 +103,30 @@ document.querySelector('[data-catalog-back]').addEventListener('click', () => ac
 const checkout = document.querySelector('[data-checkout]');
 const checkoutSheet = checkout?.querySelector('.checkout-sheet');
 const checkoutOpenButtons = [...document.querySelectorAll('[data-checkout-open]')];
-const checkoutPayButton = checkout?.querySelector('[data-checkout-pay]');
-const checkoutPayLabel = checkout?.querySelector('[data-checkout-pay-label]');
 const checkoutNote = checkout?.querySelector('[data-checkout-note]');
 const checkoutCourse = checkout?.querySelector('[data-checkout-course]');
 const currencyOptions = checkout ? [...checkout.querySelectorAll('[data-currency]')] : [];
 let lastCheckoutTrigger = null;
-let selectedCurrency = null;
+
+// PAYMENT LINKS: paste the nine checkout URLs between the quotes below.
+// A price button takes the visitor directly to its matching URL.
+const paymentUrls = {
+  foundation: {
+    PLN: '',
+    UAH: '',
+    USD: ''
+  },
+  pro: {
+    PLN: '',
+    UAH: '',
+    USD: ''
+  },
+  leadership: {
+    PLN: '',
+    UAH: '',
+    USD: ''
+  }
+};
 
 const checkoutCourses = {
   foundation: {
@@ -151,21 +168,17 @@ const openCheckout = (trigger) => {
   const course = checkoutCourses[trigger.dataset.checkoutOpen];
   if (!course) return;
   lastCheckoutTrigger = trigger;
-  selectedCurrency = null;
   checkoutCourse.textContent = course.name;
   currencyOptions.forEach((option) => {
     const price = course.prices[option.dataset.currency];
     option.dataset.price = price.value;
     option.dataset.displayPrice = price.display;
-    option.dataset.paymentUrl = trigger.dataset[`payment${option.dataset.currency.toLowerCase()}`] || '';
-    option.classList.remove('is-selected');
-    option.setAttribute('aria-checked', 'false');
+    option.dataset.paymentUrl = paymentUrls[trigger.dataset.checkoutOpen][option.dataset.currency];
+    option.setAttribute('aria-label', `Оплатити ${course.name}: ${price.display}`);
     option.querySelector('strong').innerHTML = price.display.replace(/\s([^\s]+)$/, ' <em>$1</em>');
   });
-  checkoutPayButton.disabled = true;
-  checkoutPayLabel.textContent = 'Оберіть валюту';
   checkoutNote.classList.remove('is-error');
-  checkoutNote.textContent = 'Безпечна оплата · Доступ до курсу одразу після оплати';
+  checkoutNote.textContent = 'Натисніть на ціну, щоб перейти до безпечної оплати';
   checkout.classList.add('is-open');
   checkout.setAttribute('aria-hidden', 'false');
   document.body.classList.add('checkout-open');
@@ -181,29 +194,14 @@ checkout?.querySelectorAll('[data-checkout-close]').forEach((button) => {
 
 currencyOptions.forEach((option) => {
   option.addEventListener('click', () => {
-    selectedCurrency = option;
-    currencyOptions.forEach((item) => {
-      const isSelected = item === option;
-      item.classList.toggle('is-selected', isSelected);
-      item.setAttribute('aria-checked', String(isSelected));
-    });
-    checkoutPayButton.disabled = false;
-    checkoutPayLabel.textContent = `Оплатити ${option.dataset.displayPrice}`;
-    checkoutNote.classList.remove('is-error');
-    checkoutNote.textContent = 'Безпечна оплата · Доступ до курсу одразу після оплати';
-    if ('vibrate' in navigator) navigator.vibrate(18);
+    const paymentUrl = option.dataset.paymentUrl;
+    if (paymentUrl) {
+      window.location.assign(paymentUrl);
+      return;
+    }
+    checkoutNote.classList.add('is-error');
+    checkoutNote.textContent = 'Для цієї ціни ще не додано посилання на оплату.';
   });
-});
-
-checkoutPayButton?.addEventListener('click', () => {
-  if (!selectedCurrency) return;
-  const paymentUrl = selectedCurrency.dataset.paymentUrl;
-  if (paymentUrl) {
-    window.location.assign(paymentUrl);
-    return;
-  }
-  checkoutNote.classList.add('is-error');
-  checkoutNote.textContent = 'Додайте платіжне посилання для цієї валюти в data-payment-url.';
 });
 
 document.addEventListener('keydown', (event) => {
