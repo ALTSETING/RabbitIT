@@ -1,0 +1,7 @@
+{
+  "name": "rabbit-academy",
+  "private": true,
+  "scripts": {
+    "test": "node --test"
+  }
+}

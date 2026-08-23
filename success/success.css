@@ -1,0 +1,121 @@
+.success-page {
+  min-height: 100vh;
+  margin: 0;
+  color: #172033;
+  background:
+    radial-gradient(circle at 18% 20%, rgba(255, 215, 119, 0.34), transparent 30%),
+    radial-gradient(circle at 82% 78%, rgba(232, 110, 69, 0.2), transparent 32%),
+    #f7f2e8;
+}
+
+.success-shell {
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 28px;
+  padding: 32px 20px;
+}
+
+.success-brand {
+  color: #172033;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+}
+
+.success-card {
+  width: min(100%, 660px);
+  box-sizing: border-box;
+  padding: clamp(38px, 7vw, 72px);
+  text-align: center;
+  border: 1px solid rgba(23, 32, 51, 0.1);
+  border-radius: 36px;
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow: 0 30px 80px rgba(49, 38, 25, 0.12);
+  backdrop-filter: blur(18px);
+}
+
+.success-mark {
+  width: 74px;
+  height: 74px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 28px;
+  border-radius: 50%;
+  background: #172033;
+  color: white;
+  font-size: 2rem;
+}
+
+.success-mark.is-loading span {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: success-spin 0.8s linear infinite;
+}
+
+.success-mark.is-success::before { content: "✓"; }
+.success-mark.is-error { background: #a53d32; }
+.success-mark.is-error::before { content: "!"; }
+
+.success-eyebrow {
+  margin: 0 0 12px;
+  color: #d05b32;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.success-card h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 7vw, 4.5rem);
+  line-height: 0.98;
+  letter-spacing: -0.065em;
+}
+
+.success-copy {
+  max-width: 480px;
+  margin: 24px auto 0;
+  color: #667083;
+  line-height: 1.7;
+}
+
+.success-payment {
+  width: fit-content;
+  margin: 24px auto 0;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: #f4ede0;
+  font-weight: 700;
+}
+
+.success-button {
+  display: inline-flex;
+  margin-top: 32px;
+  text-decoration: none;
+}
+
+.success-security {
+  margin: 0;
+  color: #7b7f87;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+
+.success-security span { color: #d05b32; }
+
+@keyframes success-spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 520px) {
+  .success-card { border-radius: 26px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .success-mark.is-loading span { animation: none; }
+}

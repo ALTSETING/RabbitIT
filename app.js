@@ -196,6 +196,13 @@ currencyOptions.forEach((option) => {
   option.addEventListener('click', () => {
     const paymentUrl = option.dataset.paymentUrl;
     if (paymentUrl) {
+      if (typeof window.fbq === 'function') {
+        window.fbq('track', 'InitiateCheckout', {
+          value: Number(option.dataset.price),
+          currency: option.dataset.currency,
+          content_name: checkoutCourse.textContent
+        });
+      }
       window.location.assign(paymentUrl);
       return;
     }
