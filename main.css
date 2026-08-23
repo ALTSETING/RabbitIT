@@ -682,7 +682,7 @@ a {
 
 .hero-content {
   position: relative;
-  max-width: 650px;
+  max-width: 1080px;
   margin-inline: auto;
   z-index: 1;
   text-align: center;
@@ -721,6 +721,117 @@ h1 {
 
 .hero-copy {
   margin-inline: auto;
+}
+
+.hero-practice {
+  margin: 36px auto 0;
+  text-align: left;
+}
+
+.hero-practice-intro {
+  max-width: 780px;
+  margin: 0 auto 26px;
+  text-align: center;
+}
+
+.hero-practice-kicker {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: var(--gold);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.hero-practice-intro h2 {
+  margin: 0 0 14px;
+  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+.hero-practice-intro p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.hero-practice-intro strong {
+  color: var(--text);
+  font-weight: 800;
+}
+
+.hero-practice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.hero-practice-grid article {
+  position: relative;
+  padding: 22px 22px 22px 72px;
+  border: 1px solid rgba(201, 169, 110, 0.25);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 12px 34px rgba(62, 47, 27, 0.06);
+}
+
+.hero-practice-icon {
+  position: absolute;
+  top: 22px;
+  left: 20px;
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--gold), #e2c78f);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  box-shadow: 0 8px 18px rgba(201, 169, 110, 0.28);
+}
+
+.hero-practice-grid h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.hero-practice-grid p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.hero-practice-path {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 9px 14px;
+  margin: 26px 0 12px;
+  color: var(--text);
+  font-size: clamp(0.96rem, 1.6vw, 1.15rem);
+  text-align: center;
+}
+
+.hero-practice-path span {
+  color: var(--gold);
+  font-size: 1.35em;
+}
+
+.hero-practice-note {
+  max-width: 760px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-style: italic;
+  line-height: 1.55;
+  text-align: center;
 }
 
 .sentence + .sentence {
@@ -2176,6 +2287,19 @@ body.privacy-open {
   h1 {
     font-size: 2.8rem;
   }
+  .hero-practice {
+    margin-top: 28px;
+  }
+  .hero-practice-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-practice-grid article {
+    padding: 20px 18px 20px 66px;
+  }
+  .hero-practice-icon {
+    top: 20px;
+    left: 16px;
+  }
   .hero-actions {
     flex-direction: column;
   }
@@ -2585,5 +2709,3 @@ body.privacy-open {
     transition-duration: 0.01ms !important;
   }
 }
-
-
